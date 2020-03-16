@@ -1,0 +1,89 @@
+@import "../../utils/styles/colors.scss";
+@import "../../utils/styles/mixin.scss";
+
+.wrapper {
+  .input-wrp {
+    input {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      font-size: 1rem;
+      &::-webkit-input-placeholder {
+        font-size: 1rem;
+      }
+      &::-moz-placeholder {
+        font-size: 1rem;
+      } /* firefox 19+ */
+      &:-ms-input-placeholder {
+        font-size: 1rem;
+      } /* ie */
+      &:-moz-placeholder {
+        font-size: 1rem;
+      }
+    }
+    button{
+      background-color: #fff;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+  .create-device{
+    margin-left: auto;
+    text-align: right;
+    .add-btn {
+      padding: 0px 10px;
+      @include create-buttons($active-clr-primary, $clr-white, 38px, 1rem, 300, 20px)
+    }
+  }
+
+  .client-list {
+    div[class*="col-"] {
+      background-color: $clr-white;
+      border-radius: 20px;
+      .client-wrp {
+        width: 100%;
+        padding: 20px;
+        h3 {
+          color: $header-text-primary;
+          font-size: 1.5rem;
+        }
+        p {
+          margin-bottom: 0px;
+          font-weight: normal;
+          color: $header-text-primary;
+          font-size: 1rem;
+        }
+        .createdDate {
+          position: absolute;
+          bottom: 20px;
+          margin-bottom: 0px;
+          right: 20px;
+          font-size: .75rem;
+        }
+      }
+      .view-btn {
+        opacity: 0;
+        text-align: center;
+        color: $clr-white;
+        font-size: 1.1rem;
+        background-color: $active-clr-primary;
+        position: relative;
+        height: 50px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        transition: opacity .5s ease-in-out;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+      }
+      &:hover {
+        .view-btn {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

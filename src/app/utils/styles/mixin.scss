@@ -1,0 +1,83 @@
+/* mixin for button */
+@mixin create-buttons($bgClr, $clr, $height, $ft-size, $ft-weight, $rad) {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  line-height: $height/2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  @include border(1px, transparent);
+  @include border-single-radius($rad);
+  @include generate-text($clr, $ft-size);
+  height: $height;
+  background-color: $bgClr;
+}
+
+/* mixin for create input field */
+
+@mixin create-input-field($ft-size, $ptb, $plr) {
+  position: relative;
+  padding: $ptb $plr;
+  @include border(1px, $border-clr);
+  @include border-single-radius(8px);
+  @include generate-text($header-text-primary, $ft-size);
+  background-color: $bg-clr-primary;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: left;
+  outline: none;
+
+  &:hover,
+  &:active {
+    @include box-shadows(3px, 3px, 6px, 0, rgba(0, 0, 0, 0.16));
+  }
+}
+
+/* mixin for border radius */
+
+@mixin border-radius($top, $right, $bottom, $left) {
+  -webkit-border-radius: $top $right $bottom $left;
+  -moz-border-radius: $top $right $bottom $left;
+  border-radius: $top $right $bottom $left;
+}
+
+/* mixin for border radius */
+
+@mixin border-single-radius($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+
+/* box-shadow generator
+        $clr- in RGBA format
+     */
+
+@mixin box-shadows($hset, $vset, $blur, $spread, $clr) {
+  -webkit-box-shadow: $hset $vset $blur $spread $clr;
+  -moz-box-shadow: $hset $vset $blur $spread $clr;
+  box-shadow: $hset $vset $blur $spread $clr;
+}
+
+/* border  generator*/
+
+@mixin border($br-size, $br-clr) {
+  border: $br-size solid $br-clr;
+}
+
+/* mixin for  set text properties*/
+
+@mixin generate-text($txt-color, $txt-size) {
+  color: $txt-color;
+  font-size: $txt-size;
+}

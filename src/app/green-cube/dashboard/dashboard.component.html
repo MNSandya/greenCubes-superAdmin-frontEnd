@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-6 col-sm-6 block-1 mb-1 change-height ">
+      <div class=" rounded rounded-pill shadow-sm change-height ">
+        <div class="input-group change-height input-wrp">
+          <input type="search" placeholder="Search by Id" [(ngModel)]="searchkey" (ngModelChange)="searchClient($event)"
+            aria-describedby="button-addon1" class="form-control border-0 change-height ">
+          <div class="input-group-append change-height ">
+            <button id="button-addon1" type="submit" (click)="searchClient($event)"
+              class="btn btn-link text-primary change-height "><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-4 col-lg-4">&nbsp;</div> -->
+    <div class="col-md-2 col-lg-2 block-6 col-6 col-sm-6 mb-1 create-device">
+      <button type="button" class="change-height add-btn" (click)="createClient()">Add Devices</button>
+    </div>
+  </div>
+  <div class="row client-list m-t-20">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-12" *ngFor="let client of clientList">
+      <div class="client-wrp">
+        <h3>{{client.name}}</h3>
+        <p class="client-name">{{client.branch}}, {{client.location}}</p>
+        <p class="createdDate">Created on {{ client.createdDate | date:'short' }}</p>
+      </div>
+      <div class="view-btn" (click)="navigatetoClient(client)">
+        <span>View</span>
+      </div>
+    </div>
+  </div>
+</div>

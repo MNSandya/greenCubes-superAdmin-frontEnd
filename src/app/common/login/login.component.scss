@@ -1,0 +1,33 @@
+@import "../../utils/styles/colors.scss";
+@import "../../utils/styles/mixin.scss";
+
+.layout-wrapper {
+  padding: 20px;
+  padding-top: 10px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  @media screen and (max-width : 700px){
+   padding-right:5px;
+    }
+
+}
+.main-wrapper{
+  height: 100vh;
+  padding-top: 0px !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.header{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+
+}
+.sidebar{
+margin-top: 60px;
+}
+ .empty-div{
+  height: 5px;
+  background-color: $light-background;
+}

@@ -1,0 +1,46 @@
+<div class="add-client-wrapper ">
+
+  <div>
+    <span (click)="backTodevicelist()" class="create-span">Client List &nbsp; ></span>
+    <span class="create-span1">&nbsp; &nbsp; Add Client</span>
+  </div>
+  <div class="row ">
+    <div class="col-md-6 col-sm-8 col-12 ">
+      <form name="form" class="w-100" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+        <div class="form-group w-100 input-wrp">
+          <label for="clientName">Name</label> <span class="required">*</span>
+          <input (keydown.space)="space($event)" type="text" class="form-control" name="clientName"
+            [(ngModel)]="clientModel.name" #clientName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clientName.invalid }"
+            required />
+          <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+            <div class="error-text" *ngIf="name.errors.required">Name is required</div>
+          </div>
+
+        </div>
+        <div class="form-group w-100 input-wrp">
+          <label for="branch">Branch</label>
+          <input class="form-control w-100" name="branch" [(ngModel)]="clientModel.branch" #branch="ngModel" />
+        </div>
+        <div class="form-group w-100 input-wrp">
+          <label for="location">Location</label>
+          <input class="form-control w-100" name="location" [(ngModel)]="clientModel.location" #location="ngModel" />
+        </div>
+        <div class="form-group w-100 input-wrp">
+          <label for="url">Url</label>
+          <input class="form-control w-100" name="url" [(ngModel)]="clientModel.url" #url="ngModel" />
+        </div>
+
+        <div class="form-group d-flex mt-30 ">
+          <button type="button" (click)="backTodevicelist()" class="button-1">Cancel</button>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <button (click)="onSubmit()">Add Client</button>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.091" height="40.03" viewBox="0 0 28.091 40.03">
+    <defs>
+        <style>
+            .cls-1{fill:#151523}.cls-2{fill:#fff}.cls-3{fill:none;stroke:#151523;stroke-width:.2px}
+        </style>
+    </defs>
+    <g id="device_management" data-name="device management" transform="translate(-87 -561)">
+        <g id="Group_2860" data-name="Group 2860">
+            <rect id="Rectangle_1809" width="5.625" height="10.082" class="cls-1" data-name="Rectangle 1809" rx=".5" transform="translate(98 570.216)"/>
+            <rect id="Rectangle_1810" width="28.091" height="2.004" class="cls-1" data-name="Rectangle 1810" rx="1.002" transform="translate(87 581.227)"/>
+            <rect id="Rectangle_1811" width="15.773" height="17.144" class="cls-1" data-name="Rectangle 1811" rx="2" transform="translate(93 583.886)"/>
+            <g id="Group_2858" data-name="Group 2858" transform="translate(-12919 -8347)">
+                <g id="Group_2858-2" data-name="Group 2858" transform="translate(.94 141)">
+                    <rect id="Rectangle_1809-2" width="11.629" height="8.289" class="cls-1" data-name="Rectangle 1809" rx=".5" transform="translate(13013.276 8767)"/>
+                    <path id="Rectangle_1813" d="M0 0h2.536v3.848H0z" class="cls-1" data-name="Rectangle 1813" transform="translate(13025.833 8769.175)"/>
+                    <path id="Rectangle_1814" d="M0 0h2.536v3.848H0z" class="cls-1" data-name="Rectangle 1814" transform="translate(13010.06 8769.175)"/>
+                    <rect id="Rectangle_1815" width="7.984" height="5.691" class="cls-2" data-name="Rectangle 1815" rx=".5" transform="translate(13015.099 8768.299)"/>
+                </g>
+            </g>
+            <g id="Group_2859" data-name="Group 2859">
+                <rect id="Rectangle_1816" width="1.984" height="5.691" class="cls-2" data-name="Rectangle 1816" rx=".5" transform="translate(95 590.299)"/>
+                <rect id="Rectangle_1817" width="1.984" height="5.691" class="cls-2" data-name="Rectangle 1817" rx=".5" transform="translate(100 590.299)"/>
+                <rect id="Rectangle_1818" width="1.984" height="5.691" class="cls-2" data-name="Rectangle 1818" rx=".5" transform="translate(104 590.299)"/>
+            </g>
+        </g>
+        <path id="Path_1842" d="M13215.394 8912.45h1.589l.6-.492.3.671.779-1.126.438 1.126.464-.671h2.134" class="cls-3" data-name="Path 1842" transform="translate(-13118 -8346)"/>
+    </g>
+</svg>

@@ -1,0 +1,46 @@
+<header>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-4 col-sm-6">
+      <img class="col-md-3 col-lg-3" src="../../../../assets/images/green-cube-admin-logo/Logo S.png"
+        alt="green-cube-logo">
+    </div>
+    <div class="col-md-6 col-8 col-lg-6 col-sm-6 d-flex flex-row-reverse">
+
+        <div class="block-3" [matMenuTriggerFor]="belowMenu" > <img  [src]="url"
+          alt="img_avatar3.png">  <i class="fa fa-chevron-down img-size"  aria-hidden="true"></i></div>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+              <button type="button" class="matbutton" mat-menu-item (click)="profile()">  <span class="span-mat"><i class="fa fa-user mr-3" aria-hidden="true"></i>Profile</span></button>
+              <button  type="button"  class="matbutton" mat-menu-item (click)="Logout()"><span class="span-mat"><i class="fa fa-sign-out mr-3" aria-hidden="true"></i>Logout</span></button>
+              <!-- <button  type="button"  class="matbutton" mat-menu-item (click)="changePassword()"><span class="span-mat"><i class=" fa fa-unlock-alt mr-3" aria-hidden="true"></i>Change Password</span></button> -->
+
+            </mat-menu>
+          &nbsp;
+          &nbsp;
+          <span class="span-2">{{name}}</span>
+          &nbsp;
+          <span class="span-1">Hello ,</span>
+
+          <div class="block-4">
+
+          <i class="fa fa-bell" aria-hidden="true" [matMenuTriggerFor]="alertContainer" (click)="openAlert()" ></i>
+          <span class="notification" *ngIf="newAlert"></span>
+
+
+            <mat-menu class="alertsMenu" #alertContainer="matMenu" yPosition="below">
+              <div class="alert-list">
+              <div class="alert" *ngFor="let alert of atlertsArray">
+                <div>
+                  <p><span class="lable">Cart Id </span><span class="value">:&nbsp;{{alert.cartId}}</span></p>
+                  <p><span class="lable">Status </span><span class="value">:&nbsp;{{alert.status}}</span></p>
+                  <p><span class="lable">Time </span><span class="value">:&nbsp;{{alert.createdAt | date:'short' }}</span></p>
+                  <p><span class="lable">Id </span><span class="value">:&nbsp;{{alert._id}}</span></p>
+                </div>
+              </div>
+            </div>
+              </mat-menu>
+          </div>
+
+    </div>
+
+  </div>
+</header>
