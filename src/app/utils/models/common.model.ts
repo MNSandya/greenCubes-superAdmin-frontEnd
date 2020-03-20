@@ -19,7 +19,7 @@ export class Userdata {
     this.email = data.email || '';
     this.phone = data.phone || '';
     this.role = data.role || '';
-    this.userName = data.name || '';
+    this.userName = data.userName || '';
     this.level = data.level || '';
     this.id = data._id || data.id || '';
     this.image = data.image || '';

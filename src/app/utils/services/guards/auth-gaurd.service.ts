@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthGaurdService implements CanActivate {
   @SessionStorage('authenticationToken') public authenticationToken: AuthToken;
+  @SessionStorage('adminName') public adminName;
 
   constructor(
     public router: Router,
@@ -20,16 +21,21 @@ export class AuthGaurdService implements CanActivate {
     const cookieExists: boolean = this.cookieService.check('adminToken');
     if (cookieExists) {
       const adminToken = this.cookieService.get('adminToken');
+      this.adminName = this.cookieService.get('adminName');
 
       this.authenticationToken = new AuthToken({
-        token: adminToken ,
+        token: adminToken,
         tokenType: 'JWT',
-        });
-      this.cookieService.delete('adminToken');
+      });
+      this.cookieService.delete('adminToken', '/');
+      this.cookieService.delete('clientToken', '/');
+      this.cookieService.delete('clientId', '/');
+      this.cookieService.delete('adminName', '/');
     }
     if (!this.authenticationToken) {
       this.router.navigate(['login']);
-      this.cookieService.delete('adminToken');
+      // this.cookieService.delete('adminToken');
+      this.cookieService.deleteAll();
       return false;
     }
     return true;

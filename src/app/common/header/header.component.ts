@@ -13,11 +13,14 @@ import { CookieService } from 'ngx-cookie-service';
 export class HeaderComponent implements OnInit {
   public url = '';
   @SessionStorage('userdata') public userdata: Userdata;
+  @SessionStorage('adminName') public adminName;
+
   active: any;
   matTooltipdsiabled: boolean;
   selection = '';
   public clientIcon = '';
   public userIcon = '';
+  public name = '';
 
   constructor(
     public sessionStorage: SessionStorageService,
@@ -30,6 +33,12 @@ export class HeaderComponent implements OnInit {
     // this.clientIcon = '../../../assets/images/dashboard icons/clients_icon.svg';
     // this.userIcon = '../../../assets/images/dashboard icons/user_icon_inactive.svg';
     this.url = '../../../../assets/images/deafult.png';
+
+    if (this.userdata) {
+      this.name = this.userdata.userName;
+    } else {
+      this.name = this.adminName;
+    }
     this.sharedService.messageSource.subscribe((message: string) => {
       if (message !== '' && message !== null) {
         this.selection = message;
@@ -61,7 +70,7 @@ export class HeaderComponent implements OnInit {
 
   Logout() {
     this.sessionStorage.clear();
-    this.cookieService.delete('adminToken');
+    this.cookieService.deleteAll();
     this.router.navigate(['/login']);
   }
   profile() {

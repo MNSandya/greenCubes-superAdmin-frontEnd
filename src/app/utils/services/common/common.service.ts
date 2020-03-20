@@ -34,6 +34,17 @@ export class CommonService {
         })
       );
   }
+  postuserData(url: string, data?: any): any {
+    return this.httpService.postuserData(url, data)
+      .pipe(
+        map((res: Response) => {
+          return res;
+        }),
+        catchError(error => {
+          return this.errorHandler(error);
+        })
+      );
+  }
   postNewData(url: string, data: any): any {
     return this.httpService.postnew(url, data)
       .pipe(

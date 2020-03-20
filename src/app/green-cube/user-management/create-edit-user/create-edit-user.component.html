@@ -60,11 +60,11 @@
                     <div class="form-group w-50">
                         <!-- <label for="phone">Role</label>
                     <span class="required">*</span> -->
-                        <ng-select [items]="clientList" bindLabel="name" placeholder="Client *" class="cutom-create-list form-control custom-dropdown" bindValue="id" name="clientName" [(ngModel)]="model.clientName" #clientName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && role.invalid }"
+                        <ng-select [items]="clientList" bindLabel="name" placeholder="Client *" class="cutom-create-list form-control custom-dropdown" bindValue="id" name="clientName" [(ngModel)]="model.clientName" #clientName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clientName.invalid }"
                             required>
                         </ng-select>
-                        <div class="error-text" *ngIf="f.submitted && role.invalid" class="invalid-feedback">
-                            <div class="error-text" *ngIf="role.errors.required">Role is required</div>
+                        <div class="error-text" *ngIf="f.submitted && clientName.invalid" class="invalid-feedback">
+                            <div class="error-text" *ngIf="clientName.errors.required">Role is required</div>
                         </div>
                     </div>
                     <div class="form-group w-50">

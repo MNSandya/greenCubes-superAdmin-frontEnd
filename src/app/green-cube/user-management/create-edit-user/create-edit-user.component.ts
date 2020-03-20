@@ -101,7 +101,7 @@ export class CreateEditUserComponent implements OnInit {
     // tslint:disable-next-line: triple-equals
     if (this.routeid == 0) {
       this.sharedService.display(true);
-      this.commonService.postData('api/user', this.model).subscribe(response => {
+      this.commonService.postuserData('api/user', this.model).subscribe(response => {
         if (response.success) {
           this.sharedService.display(false);
           this.sharedService.displaySnackbar('success', response.message);

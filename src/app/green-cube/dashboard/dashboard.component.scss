@@ -143,3 +143,7 @@
     padding: 20px !important;
     background-color: #ffffff !important;
 }
+
+input:focus {
+    box-shadow: none;
+}

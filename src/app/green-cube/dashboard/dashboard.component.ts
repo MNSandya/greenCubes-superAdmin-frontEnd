@@ -77,9 +77,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       this.search = '';
     }
     this.sharedService.display(true);
-    // const url = `api/werehouse/?searchString=${this.search}`;
+    const url = `api/clients?searchString=${this.search}`;
     this.clientList = [];
-    const url = 'api/clients';
+    // const url = 'api/clients';
     this.commonService.getData(url).subscribe(res => {
       if (res.success) {
         this.clientList = [];

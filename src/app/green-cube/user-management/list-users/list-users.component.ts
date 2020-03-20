@@ -58,7 +58,9 @@ export class ListUsersComponent implements OnInit, AfterViewInit {
     // this.permisson = this.rightsarray.find(x => x.modulename === 'users');
     // this.sharedService.set('currentRoute', { url: [''], path: [''], activePath: 'User Management' });
     // if (this.permisson.write === false && this.permisson.delete === false) {
-    this.displayedColumns = ['position', 'name', 'email', 'mobilenumber', 'role', 'action'];
+    // this.displayedColumns = ['position', 'name', 'email', 'mobilenumber', 'role', 'action'];
+    this.displayedColumns = ['name', 'email', 'mobilenumber', 'role', 'action'];
+
     // }
     //  this.permisson.write = false ;
     //   this.permisson.delete = false ;
@@ -174,7 +176,7 @@ export class ListUsersComponent implements OnInit, AfterViewInit {
   }
   deleteDatacall(data) {
     this.sharedService.display(true);
-    this.commonService.deleteData('api/user', data).subscribe(res => {
+    this.commonService.deleteData(`api/user/${data[0]._id}`).subscribe(res => {
       if (res.success) {
         this.sharedService.display(false);
         this.sharedService.displaySnackbar('success', res.message);
@@ -263,7 +265,7 @@ export class Userlist {
     this.userParams.searchString = searchString;
 
     // return this.commonService.getData('api/users?limit=' + limit + '&page=' + page + '&sort=' + sort + '&searchString=' + searchString)
-    return this.commonService.getData('api/user')
+    return this.commonService.getData(`api/user?searchString=${searchString}`)
       .pipe(
         (data: any[]) => {
           return data;
