@@ -1,33 +1,46 @@
-<div class="wrapper">
-  <div class="row">
-    <div class="col-md-3 col-lg-3 col-6 col-sm-6 block-1 mb-1 change-height ">
-      <div class=" rounded rounded-pill shadow-sm change-height ">
-        <div class="input-group change-height input-wrp">
-          <input type="search" placeholder="Search by Id" [(ngModel)]="searchkey" (ngModelChange)="searchClient($event)"
-            aria-describedby="button-addon1" class="form-control border-0 change-height ">
-          <div class="input-group-append change-height ">
-            <button id="button-addon1" type="submit" (click)="searchClient($event)"
-              class="btn btn-link text-primary change-height "><i class="fa fa-search"></i></button>
-          </div>
+<div class="dashboard-wrp">
+    <div class="top-layout">
+        <div class="path">
+            <span class="active-path">Clients</span>
         </div>
-      </div>
+        <div class="add-btn">
+            <button type="button" class="change-height" (click)="createClient()">Add Client</button>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-12 list-view">
+            <div class=" rounded rounded-pill shadow-sm change-height ">
+                <div class="input-group change-height ">
+                    <input (keydown.space)="space($event)" type="search" placeholder="Search by Id" [(ngModel)]="searchkey" (ngModelChange)="searchClient($event)" aria-describedby="button-addon1" class="form-control border-0 change-height ">
+                    <div class="input-group-append change-height ">
+                        <button id="button-addon1" type="submit" (click)="searchClient($event)" class="btn btn-link text-primary change-height "><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="warehouse-list">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12 block pointer" *ngFor="let client of clientList">
+                    <div class="warehouse" (click)="navigateToClient(client)">
+                        <h2>{{client.name}}</h2>
+                        <span class="count">No.of  Facility : {{client.noOfDevices}}</span>
+                        <p class="createdDate">Created on {{ client.createdDate | date:'short' }}</p>
+                        <p class="address">{{client.branch}}, {{client.location}}</p>
+                        <span class="fa fa-pencil-square-o edit" (click)="updateClient($event, client)"></span>
+                        <span class="fa fa-trash delete" (click)="deletepopup($event, client.id); false"></span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- <div class="col-md-4 col-lg-4">&nbsp;</div> -->
-    <div class="col-md-2 col-lg-2 block-6 col-6 col-sm-6 mb-1 create-device">
-      <button type="button" class="change-height add-btn" (click)="createClient()">Add Devices</button>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-6 col-12 map-view">
+            <agm-map #AgmMap [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true" [fitBounds]="true">
+                <!-- <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng"
+                  [label]="m.label" [markerDraggable]="m.draggable" [iconUrl]="markericon" [agmFitBounds]="true">
+                  <agm-info-window>
+                      <h2 class="map-name">{{m.name}}</h2>
+                      <span class="map-address">{{m.address}}</span>
+                  </agm-info-window>
+              </agm-marker> -->
+            </agm-map>
+        </div>
     </div>
-  </div>
-  <div class="row client-list m-t-20">
-    <div class="col-lg-3 col-md-3 col-sm-4 col-12" *ngFor="let client of clientList">
-      <div class="client-wrp">
-        <h3>{{client.name}}</h3>
-        <p class="client-name">{{client.branch}}, {{client.location}}</p>
-        <p class="createdDate">Created on {{ client.createdDate | date:'short' }}</p>
-      </div>
-      <div class="view-btn" (click)="navigatetoClient(client)">
-        <span>View</span>
-      </div>
-    </div>
-  </div>
 </div>

@@ -1,4 +1,4 @@
-window['localUrl'] = 'http://34.93.62.160:6001/';
+window['localUrl'] = 'http://35.197.139.162:4200/';
 window['hostUrl'] = 'localhost';
 window['snackBarConfig'] = {
     duration: 4000,

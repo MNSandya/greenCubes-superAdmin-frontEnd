@@ -1,0 +1,46 @@
+@import "../../../utils/styles/colors.scss";
+@import "../../../utils/styles/mixin.scss";
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        background: $active-clr-primary;
+        outline: 0;
+        color: $clr-white;
+        border: 1px solid $active-clr-primary;
+        border-radius: 10px;
+        width: 100px;
+        height: 40px;
+        font-size: 0.7em;
+        &.button-1 {
+            background: $clr-white;
+            border-radius: 10px;
+            border: solid 1px $text-clr-primary;
+            color: $clr-black;
+            height: 40px;
+            font-size: 0.7em;
+        }
+    }
+}
+
+.border-style {
+    border-bottom: none;
+    border-top: none;
+}
+
+.modal-body {
+    margin-bottom: 15px;
+    span {
+        //  font-family: Lato;
+        font-size: 16px;
+        white-space: nowrap;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.22;
+        letter-spacing: 0.9px;
+        text-align: left;
+        color: $header-text-primary;
+    }
+}

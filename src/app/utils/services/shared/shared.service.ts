@@ -11,9 +11,14 @@ import { MatSnackBar } from '@angular/material';
 })
 export class SharedService {
   @SessionStorage('rights') public rightsarray: any;
+  @SessionStorage('clientList') public clientList: any;
+
   rights: any = [];
+  // clientList = [];
   messageSource: BehaviorSubject<string> = new BehaviorSubject('');
   userdataupdate: BehaviorSubject<string> = new BehaviorSubject('');
+  public status: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   public messageContent = new SnackBarMessage();
   constructor(
     public commonService: CommonService,
@@ -77,4 +82,16 @@ openSnackbar(message: SnackBarMessage): void {
   this.snackBar.open(message.body, message.title, window['snackBarConfig']);
 }
 
+setClientList(data) {
+  this.clientList = data;
+}
+getClientist() {
+  return this.clientList;
+}
+
+display(value: boolean, counter?: string) {
+  if (value !== undefined) {
+    this.status.next(value);
+  }
+}
 }

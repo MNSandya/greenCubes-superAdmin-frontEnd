@@ -1,0 +1,15 @@
+<div class="pop-up">
+    <div class="modal-header border-style">
+        <h4 class="modal-title">Edit Client</h4>
+    </div>
+    <div class="modal-body ">
+        <div class="row input-wrp">
+            <label for="clientName">Client Name</label>
+            <input type="text" class="form-control" name="clientName" [(ngModel)]="model.name" #clientName="ngModel" required />
+        </div>
+    </div>
+    <div class="modal-footer border-style d-flex">
+        <button type="button" class="button-1" mat-dialog-close>Cancel</button>
+        <button type="button" (click)="updateClient()">Update</button>
+    </div>
+</div>

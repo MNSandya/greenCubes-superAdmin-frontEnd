@@ -9,16 +9,28 @@ import { MatMenuModule} from '@angular/material/menu';
 import { LayoutComponent } from './layout/layout.component';
 import { UtilsModule } from '../utils/utils.module';
 import { GreenCubeModule } from '../green-cube/green-cube.module';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerificationCodeComponent } from './verification-code/verification-code.component';
+// import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
-  declarations: [LoginComponent, HeaderComponent, LayoutComponent],
+  declarations: [
+    LoginComponent,
+    HeaderComponent,
+    LayoutComponent,
+    ChangePasswordComponent,
+    ForgotPasswordComponent,
+    VerificationCodeComponent
+  ],
   imports: [
     CommonModule,
     CommonRoutingModule,
     ReactiveFormsModule,
     MatMenuModule,
     UtilsModule,
-    GreenCubeModule
+    GreenCubeModule,
+    FormsModule
   ],
-  exports : [HeaderComponent]
+  exports : [HeaderComponent, LayoutComponent]
 })
 export class AppCommonModule { }

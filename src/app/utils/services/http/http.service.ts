@@ -69,9 +69,9 @@ export class HttpService {
         catchError(this.handleError)
       );
   }
-  postClient(api: any, data?: any): Observable<any> {
+  getClient(api: any): Observable<any> {
     return this.http
-      .post(api, JSON.stringify(data), { headers: this.getRequestHeaders() })
+      .get(api, { headers: this.getClientRequestHeaders() })
       .pipe(
         map(response => response),
         catchError(this.handleError)
@@ -181,6 +181,19 @@ export class HttpService {
     // include the autherisation header if it exitsts
     if (this.authenticationToken) {
       headers = headers.append('x-access-token', this.authenticationToken.tokenType + ' ' + this.authenticationToken.accessToken);
+      headers = headers.append('Cache-Control', 'no-cache');
+      headers = headers.append('Pragma', 'no-cache');
+      headers = headers.append('Expires', 'Sat, 01 Jan 2000 00:00:00 GMT');
+    }
+    return headers;
+  }
+
+  getClientRequestHeaders() {
+    let headers: HttpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    if (this.authenticationToken) {
+      headers = headers.append('x-access-token', this.authenticationToken.accessToken);
       headers = headers.append('Cache-Control', 'no-cache');
       headers = headers.append('Pragma', 'no-cache');
       headers = headers.append('Expires', 'Sat, 01 Jan 2000 00:00:00 GMT');

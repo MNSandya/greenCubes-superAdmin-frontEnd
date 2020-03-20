@@ -1,0 +1,111 @@
+<div class="top-layout">
+    <div class="path">
+        <span class="active-path">Profile</span>
+    </div>
+</div>
+<div class="user-managment-wrapper">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-7 col-sm-6 change-height ">
+            <div class=" rounded rounded-pill shadow-sm change-height">
+                <div class="input-group ml-2 mr-2 change-height">
+                    <input (keydown.space)="space($event)" type="search" placeholder="Search user" [(ngModel)]="searchkey" (ngModelChange)="searchUser($event)" aria-describedby="button-addon1" class="form-control input-size border-0 change-height">
+                    <div class="input-group-append input-size change-height">
+                        <button id="button-addon1 input-size change-height" type="submit" (click)="searchUser(searchkey)" class="btn btn-link text-primary"><i
+                class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4 col-2 col-sm-1">&nbsp;</div>
+        <div class="col-md-2 col-lg-2 col-3 col-sm-5">
+            <!-- <button type="button" class= "change-height" *ngIf="permisson.write"  (click)="createUser(0)">Add User</button> -->
+            <button type="button" class="change-height" (click)="createUser(0)">Add User</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="w-100">
+            <!-- <div class="loading-shade" *ngIf="isLoadingResults ">
+            <mat-spinner [diameter]="60" *ngIf="isLoadingResults"></mat-spinner>
+          </div> -->
+        </div>
+        <table mat-table [dataSource]="userlistarray" class="w-100" matSort>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef style="width: 5%"> </th>
+                <td mat-cell *matCellDef="let element">
+                    <!-- <label  *ngIf="permisson.delete" class="checkbox-container inactive">
+            <input type="checkbox"   class="checkbox-size" [disabled]="permisson.delete"
+              [(ngModel)]="element.checked">
+            <span class="checkmark"></span>
+          </label> -->
+                    <!-- <label *ngIf="permisson.delete" class="checkbox-container"> -->
+                    <label class="checkbox-container">
+          <input type="checkbox"  (change)="deleteRowSelection($event,element._id)" class="checkbox-size"
+            [(ngModel)]="element.checked">
+          <span class="checkmark"></span>
+        </label> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="mobilenumber">
+                <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+                <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Role </th>
+                <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef class="txt-center"> Action</th>
+                <td mat-cell *matCellDef="let element" class="txt-center">
+                    <!-- <div class="inactive" *ngIf="disable || !element.edit">
+                <img  class="img-size mb-1 "
+                  src="../../../../assets/images/edit.svg" alt="green-cube-logo">
+                &nbsp;&nbsp;
+                <i class="fa fa-trash"  ></i>
+              </div> -->
+                    <div>
+                        <!-- <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="createUser(element._id)"></i> &nbsp;&nbsp; -->
+                        <i class="fa fa-trash pointer" (click)='deleteuser(element._id)'></i>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns | paginate: {itemsPerPage: limit, currentPage: page, totalItems: resultsLength}" [ngClass]="{'active': row.checked==true}"></tr>
+        </table>
+        <div class="d-flex justify-content-center mt-2 ">
+            <div> <span *ngIf="errormsg">No user found</span></div>
+
+        </div>
+
+
+
+    </div>
+    <div class="page-footer font-small ">
+        <pagination-controls (pageChange)="pageChanged($event)" maxSize="7" responsive="true"></pagination-controls>
+        <div *ngIf="deleterow.length > 0" class="row block-1">
+
+            <div class="col-md-6 col-sm-7 col-7 col-lg-6 ">
+                <span class="list-font"> {{deleterow.length}} of {{resultsLength}}</span> &nbsp;<span class="Selected-font">User
+          Selected</span>
+            </div>
+            <div class="col-md-4 col-sm-1  col-1 col-lg-4 ">&nbsp;</div>
+            <div class="col-md-1 col-sm-2  col-2 col-lg-1 ">
+                <button type="button" class="button-1" (click)="cancelselction()">Cancel</button>
+            </div>
+            <div class="col-md-1 col-sm-2  col-2 col-lg-1 ">
+                <button type="button" (click)="multideleterows()" class="">Delete</button>
+            </div>
+        </div>
+
+    </div>
+</div>

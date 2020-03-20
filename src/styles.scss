@@ -1,414 +1,627 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 /* You can add global styles to this file, and also import other style files */
+
 @import "../src/app/utils/styles/colors.scss";
 @import "../src/app/utils/styles/mixin.scss";
-
+@import "../node_modules/@ng-select/ng-select/scss/default.theme.scss";
 body {
-  font-size: 16px;
-  @media screen and (max-width : 600px){
-    font-size: 12px;
-  }
-  height: 100vh;
-  line-height: 1.18;
-  font-family: 'Lato', sans-serif !important;
-  font-weight: bold !important;
-  background-color: $light-background;
-  overflow: hidden;
+    font-size: 16px;
+    @media screen and (max-width: 600px) {
+        font-size: 12px;
+    }
+    height: 100vh;
+    line-height: 1.18;
+    font-family: 'Lato',
+    sans-serif !important;
+    font-weight: bold !important;
+    background-color: $light-background;
+    overflow: hidden;
 }
 
 input {
-  font-weight: 500 !important;
+    font-weight: 500 !important;
 }
 
-.m-t-20{
-  margin-top: 20px;
+.m-t-20 {
+    margin-top: 20px;
 }
 
 .p-0 {
-  padding: 0px;
+    padding: 0px;
 }
 
 .pt-10 {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .pt-20 {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
-
 .mt-10 {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .mt-15 {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .mt-20 {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .mt-30 {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .mt-40 {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .mr-10 {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .plr-6 {
-  padding: 0 6px;
+    padding: 0 6px;
 }
 
 .mtb-30 {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 .mtb-20 {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .mtb-40 {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 
 .txt-center {
-  text-align: center !important ;
+    text-align: center !important;
 }
 
 .txt-right {
-  text-align: right;
+    text-align: right;
 }
 
 .cursor-pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .pull-right {
-  float: right;
+    float: right;
 }
 
 .pull-left {
-  float: left;
+    float: left;
 }
 
 .row {
-  margin-right: 0;
-  margin-left: 0;
-
-  [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-.mat-tab-body-content{
-  overflow: hidden !important;
+    margin-right: 0;
+    margin-left: 0;
+    [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
 
 ::placeholder {
-  /* Firefox, Chrome, Opera */
-  color: $text-clr-primary;
-  font-weight: 500 !important;
+    /* Firefox, Chrome, Opera */
+    color: $text-clr-primary;
+    font-weight: 500 !important;
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: $text-clr-primary;
+    /* Internet Explorer 10-11 */
+    color: $text-clr-primary;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: $text-clr-primary;
+    /* Microsoft Edge */
+    color: $text-clr-primary;
 }
 
 //change cursor color
 input {
-  caret-color: $active-clr-primary;
+    caret-color: $active-clr-primary;
 }
 
 //button disable property
 button:disabled {
-  cursor: not-allowed !important;
+    cursor: not-allowed !important;
 }
 
 // to display error messages
 .input-error-msg {
-  padding: 8px 0px 10px;
-  >div:first-child{
-    @include generate-text($info-cart-clr-low, 14px);
-  }
+    padding: 8px 0px 10px;
+    >div:first-child {
+        @include generate-text($info-cart-clr-low, 14px);
+    }
 }
+
 // entry common scss
 .entry-container {
-  >div:first-child {
-    height: 100vh;
-
     >div:first-child {
-      background-color: $active-clr-primary;
-      position: relative;
-
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    >div:nth-child(2) {
-      position: relative;
-      display: flex;
-      align-items: center;
-
-      .entry-content-block {
-        margin: 0 auto;
-
-        .block-1 {
-          @include generate-text($header-text-primary, 36px);
-          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-            font-size: 30px;
-          }
-
-          p {
-            @include generate-text($text-clr-secondary, 16px);
-          }
-        }
-
-        .block-2 {
-          position: relative;
-
-          input {
-            @include create-input-field(18px, 15px, 10px);
-          }
-
-          div {
+        height: 100vh;
+        >div:first-child {
+            background-color: $active-clr-primary;
             position: relative;
-
-            i {
-              right: 10px;
-              bottom: 14px;
-              position: absolute;
-              cursor: pointer;
-              color: $text-clr-primary;
-            }
-          }
-
-        }
-
-        .block-3 {
-          cursor-pointer      >div:first-child {
-
-            .forgot-pwd-link,
-            .login-route-link {
-              @include generate-text($header-text-primary, 18px);
-              height: 50px;
-              display: flex;
-              align-items: center;
-            }
-          }
-
-          >div:nth-child(2) {
             img {
-              margin-right: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
-
-            button {
-              @include create-buttons($active-clr-primary, $clr-white, 50px, 18px, bold, 8px);
-              @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-                font-size: 14px;
-                height: 40px;
-              }
+        }
+        >div:nth-child(2) {
+            position: relative;
+            display: flex;
+            align-items: center;
+            .entry-content-block {
+                margin: 0 auto;
+                .block-1 {
+                    @include generate-text($header-text-primary, 36px);
+                    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                        font-size: 30px;
+                    }
+                    p {
+                        @include generate-text($text-clr-secondary, 16px);
+                    }
+                }
+                .block-2 {
+                    position: relative;
+                    input {
+                        @include create-input-field(18px, 15px, 10px);
+                    }
+                    div {
+                        position: relative;
+                        i {
+                            right: 10px;
+                            bottom: 14px;
+                            position: absolute;
+                            cursor: pointer;
+                            color: $text-clr-primary;
+                        }
+                    }
+                }
+                .block-3 {
+                    cursor-pointer>div:first-child {
+                        .forgot-pwd-link,
+                        .login-route-link {
+                            @include generate-text($header-text-primary, 18px);
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    >div:nth-child(2) {
+                        img {
+                            margin-right: 10px;
+                        }
+                        button {
+                            @include create-buttons($active-clr-primary, $clr-white, 50px, 18px, bold, 8px);
+                            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                                font-size: 14px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+                .block-4 {
+                    >span:first-child {
+                        @include generate-text($text-clr-secondary, 16px);
+                    }
+                    >span:nth-child(2) {
+                        @include generate-text($header-text-primary, 16px);
+                    }
+                }
             }
-          }
+            .footer-block {
+                position: absolute;
+                bottom: 45px;
+                >span:first-child {
+                    @include generate-text($text-clr-secondary, 18px);
+                }
+                >span:nth-child(2) {
+                    @include generate-text($header-text-primary, 18px);
+                }
+            }
         }
-
-        .block-4 {
-          >span:first-child {
-            @include generate-text($text-clr-secondary, 16px);
-          }
-
-          >span:nth-child(2) {
-            @include generate-text($header-text-primary, 16px);
-          }
-        }
-      }
-
-      .footer-block {
-        position: absolute;
-        bottom: 45px;
-
-        >span:first-child {
-          @include generate-text($text-clr-secondary, 18px);
-        }
-
-        >span:nth-child(2) {
-          @include generate-text($header-text-primary, 18px);
-        }
-      }
     }
-  }
-}
-.ngx-pagination a, .ngx-pagination button {
-  color:#000000 !important;
-  display: block;
-  padding: 0.1875rempointer.625rem;
-  border-radius: 0;
-}
-.ngx-pagination .current {
- color:$clr-white !important;
- border-radius: 5px;
 }
 
-.pointer{
-  cursor: pointer;
+.ngx-pagination a,
+.ngx-pagination button {
+    color: #000000 !important;
+    display: block;
+    padding: 0.1875rempointer.625rem;
+    border-radius: 0;
 }
 
-::-webkit-input-placeholder  {
-  /* Edge */
-  opacity: 0.5 !important;
-  font-stretch: normal;
-  line-height: 1.22;
-  letter-spacing: 0.9px;
-  text-align: left;
-  color: $header-text-primary !important;
+.ngx-pagination {
+    padding-inline-start: 10px;
+    .current {
+        color: $clr-white !important;
+        border-radius: 5px;
+        background-color: $active-clr-primary !important;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    /* Edge */
+    opacity: 0.5 !important;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: $header-text-primary !important;
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer */
-  opacity: 0.5 !important;
-  font-stretch: normal;
-  line-height: 1.22;
-  letter-spacing: 0.9px;
-  text-align: left;
-  color: $header-text-primary !important;
+    /* Internet Explorer */
+    opacity: 0.5 !important;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: $header-text-primary !important;
 }
 
 ::placeholder {
-  opacity: 0.5 !important;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.22;
-  letter-spacing: 0.9px;
-  @include generate-text($header-text-primary !important, 18px);
-  text-align: left;
-  color: $header-text-primary !important;
-  @media screen and (max-width : 700px){
-    @include generate-text($header-text-primary !important, 10px);
+    opacity: 0.5 !important;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    @include generate-text($header-text-primary !important, 18px);
+    text-align: left;
+    color: $header-text-primary !important;
+    @media screen and (max-width: 700px) {
+        @include generate-text($header-text-primary !important, 10px);
     }
 }
 
 .checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 
 /* Hide the browser's default checkbox */
+
 .checkbox-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
+
 /* Create a custom chcursor-poineckbox */
+
 .checkmark {
-  position : absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  border: solid 1px $text-clr-primary;
-  border-radius: 5px;
-  width: 25px;
-  background-color: $clr-white;
-  @media screen and (max-width : 600px){
-    width: 20px;
-    height: 20px;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    border: solid 1px $text-clr-primary;
+    border-radius: 5px;
+    width: 25px;
+    background-color: $clr-white;
+    @media screen and (max-width: 600px) {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
 }
 
 .checkbox-container .checkmark:after {
-  left: 9px;
-  @media screen and (max-width : 600px){
-    left: 7px;
-    top: 4px;
-  }
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid 1px $active-clr-primary;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    @media screen and (max-width: 600px) {
+        left: 7px;
+        top: 4px;
+    }
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid 1px $active-clr-primary;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-
-
-tr td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px;}
-tr td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
-
-td.mat-cell{
-  border-bottom-style: none;
+tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-th.mat-header-cell{
-  border-bottom-style: none;
+tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.required
-{
-    color: #dc3545;
+td.mat-cell {
+    border-bottom-style: none;
+}
+
+th.mat-header-cell {
+    border-bottom-style: none;
+}
+
+.required {
+    color: $active-clr-primary;
     font-size: 18px;
 }
-button:focus { outline: none; }
 
-
-.login-span-1{
-  @media screen and (max-width : 700px){
-    font-size: 24px;
-       }
+button:focus {
+    outline: none;
 }
+
+.login-span-1 {
+    @media screen and (max-width: 700px) {
+        font-size: 24px;
+    }
+}
+
 .primary-tooltip {
-  background-color: $active-clr-primary;
-  font-size: 14px;
-}
-.snackbar-color{
-  background-color:#303030 !important;
-  color:$clr-white;
-}
-.font-small {
-  @media screen and (max-width : 600px){
-    font-size: 0.6rem;
-  }
-}
-.bold {
-  font-weight: bold !important;
+    background-color: $active-clr-primary;
+    font-size: 14px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.snackbar-color {
+    background-color: #303030 !important;
+    color: $clr-white;
+}
+
+.font-small {
+    @media screen and (max-width: 600px) {
+        font-size: 0.6rem;
+    }
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.rounded-pill {
+    input {
+        padding: 15px;
+        border-radius: 15px;
+    }
+}
+
+.fa {
+    color: $active-clr-primary;
+}
+
+.top-layout {
+    .path {
+        border-bottom: solid 1px #d0d0d0;
+        padding: 10px;
+        background-color: $primary-clr;
+        @media screen and (max-width: 767px) {
+            padding: 10px;
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            padding: 10px;
+        }
+        span {
+            font-size: 18px;
+            color: #8e8e8e;
+            font-weight: normal;
+            letter-spacing: 1px;
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+            }
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 16px;
+            }
+            &.active-path {
+                color: $primary-font-clr;
+                font-size: 26px;
+                @media screen and (max-width: 767px) {
+                    font-size: 16px;
+                }
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .add-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        button {
+            // font-family: Lato;
+            background: $active-clr-primary;
+            @include generate-text($clr-white, 14px);
+            border: 1px solid $active-clr-primary;
+            border-radius: 15px;
+            width: 100%;
+            padding: 10px;
+            height: 40px;
+            @media screen and (max-width: 1000px) {
+                font-size: 10px !important;
+            }
+            @media screen and (max-width: 600px) {
+                font-size: 10px !important;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+
+/* Absolute Center Spinner */
+
+.loading {
+    position: fixed;
+    z-index: 99999999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* Transparent Overlay */
+
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loading:not(:required) {
+    /* hide "loading..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 1500ms infinite linear;
+    -moz-animation: spinner 1500ms infinite linear;
+    -ms-animation: spinner 1500ms infinite linear;
+    -o-animation: spinner 1500ms infinite linear;
+    animation: spinner 1500ms infinite linear;
+    border-radius: 0.5em;
+    // -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+    // box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+    -webkit-box-shadow: rgba(67, 114, 26) 1.5em 0 0 0, rgba(67, 114, 26) 1.1em 1.1em 0 0, rgba(67, 114, 26) 0 1.5em 0 0, rgba(67, 114, 26) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(67, 114, 26) 0 -1.5em 0 0, rgba(67, 114, 26) 1.1em -1.1em 0 0;
+    box-shadow: rgba(67, 114, 26) 1.5em 0 0 0, rgba(67, 114, 26) 1.1em 1.1em 0 0, rgba(67, 114, 26) 0 1.5em 0 0, rgba(67, 114, 26) -1.1em 1.1em 0 0, rgba(67, 114, 26) -1.5em 0 0 0, rgba(67, 114, 26) -1.1em -1.1em 0 0, rgba(67, 114, 26) 0 -1.5em 0 0, rgba(67, 114, 26) 1.1em -1.1em 0 0;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

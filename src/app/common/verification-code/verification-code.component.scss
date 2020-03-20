@@ -1,0 +1,31 @@
+@import "../../utils//styles/colors.scss";
+@import "../../utils/styles/mixin.scss";
+
+.otp-form-box {
+  position: relative;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  input[type="number"] {
+    outline: 0;
+    text-align: center;
+    border-bottom: 5px solid $login-clr-primary;
+    width: 100px;
+    @include generate-text($header-text-primary , 25px);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}

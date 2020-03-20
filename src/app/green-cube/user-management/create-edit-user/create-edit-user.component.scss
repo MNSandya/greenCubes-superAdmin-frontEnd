@@ -1,0 +1,188 @@
+@import "../../../utils/styles/colors.scss";
+@import "../../../utils/styles/mixin.scss";
+.create-edit-wrapper {
+    width: 100%;
+    padding: 20px;
+    @media screen and (max-width: 767px) {
+        padding: 10px;
+    }
+    >div:first-child {
+        height: 40px;
+        margin-bottom: 20px;
+        .create-span {
+            cursor: pointer;
+            height: 40px;
+            // font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-align: left;
+            @include generate-text($header-text-primary, 30px);
+            @media screen and (max-width: 1100px) {
+                @include generate-text($header-text-primary, 16px);
+            }
+        }
+        .create-span1 {
+            height: 40px;
+            // font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-align: left;
+            @include generate-text($active-clr-primary, 30px);
+            @media screen and (max-width: 1100px) {
+                @include generate-text($active-clr-primary, 16px);
+            }
+        }
+    }
+    .content-wrp {
+        .heading {
+            font-size: 1rem;
+            font-weight: bold;
+            color: $active-clr-primary;
+            margin-bottom: 20px;
+        }
+        .form-div {
+            form {
+                .error-text {
+                    // font-family: Lato;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.22;
+                    letter-spacing: 0.9px;
+                    text-align: left;
+                    font-size: 16px;
+                }
+                .btn-div {
+                    // width: 70%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    .button-1 {
+                        background: $primary-clr;
+                        border-radius: 10px;
+                        border: solid 1px $active-clr-primary;
+                        color: $clr-black;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 1em;
+                    }
+                    button {
+                        background: $active-clr-primary;
+                        outline: 0;
+                        color: $primary-clr;
+                        border: 1px solid $active-clr-primary;
+                        border-radius: 10px;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    label {
+        height: 22px;
+        // font-family: Lato;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.22;
+        letter-spacing: 0.9px;
+        text-align: left;
+        @include generate-text(#60a325, 18px);
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @include generate-text(#60a325, 16px);
+        }
+    }
+    input {
+        height: 40px;
+        // font-family: Lato;
+        font-size: 18px;
+        font-weight: normal !important;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-align: left;
+        border: none;
+        padding: 4px;
+        background-color: transparent;
+        border-bottom: 1px solid #eee;
+        border-radius: 0;
+        @include generate-text($header-text-primary, 14px);
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @include generate-text($header-text-primary, 12px);
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .custom-dropdown {
+        padding: 0 !important;
+        height: auto !important;
+    }
+    .form-control.is-invalid {
+        background-image: none;
+    }
+    .mt-30 {
+        margin-top: 30px;
+    }
+}
+
+::ng-deep .ng-select-container {
+    height: 100%;
+    min-height: 40px !important;
+    max-height: 60px !important;
+    overflow-y: auto !important;
+}
+
+.w-50 {
+    width: 48% !important;
+    @media only screen and (max-device-width: 768px) {
+        width: 100% !important;
+    }
+}
+
+.div-wrp {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-device-width: 768px) {
+        display: block !important;
+    }
+}
+
+::ng-deep .mat-dialog-container {
+    background-color: #ffffff !important;
+}
+
+::ng-deep .ng-select .ng-select-container {
+    border: none !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid #eee !important;
+    border-radius: 0 !important;
+}
+
+::ng-deep ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    opacity: 0.8;
+}
+
+::ng-deep .ng-select input {
+    font-size: 14px !important;
+}
+
+::ng-deep .ng-select span {
+    font-size: 14px !important;
+}
+
+.form-control {
+    border: none !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid #eee !important;
+    border-radius: 0 !important;
+}

@@ -1,0 +1,52 @@
+<div class="top-layout">
+    <div class="path">
+        <span class="active-path">Profile</span>
+    </div>
+</div>
+<div class="overview-wrapper ">
+    <div class="row  profile-view">
+
+        <div class="col-md-8 col-sm-11 col-12 block-1">
+            <div class=" custom-card-div row">
+                <div class="col-md-3 col-lg-3 col-sm-3 col-3 img_wrp  ">
+                    <img [src]="url">
+                    <i *ngIf="false" class="fa fa-times close" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-9 col-lg-9 col-sm-9 col-9 block-2 ">
+                    <div class='sub-block-1'>
+                        <span class="span-1">{{userdisplaydata.userName}}</span><br>
+                        <!-- <span class="span-2">{{userdisplaydata.email}}</span> -->
+                    </div>
+                    <div class='sub-block-2 row'>
+                        <div class="">
+                            <span class="span-3">Email Id</span><br>
+                            <span class="span-4">{{userdisplaydata.email}}</span>
+                        </div>
+                        <div class=" ">
+                            <span class="span-3">Mobile Number</span><br>
+                            <span class="span-4">{{userdisplaydata.phone}}</span>
+                        </div>
+                        <div class=" ">
+                            <span class="span-3">Work Place</span><br>
+                            <span class="span-4">{{userdisplaydata.workPlace}}</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-sm-3 col-3 margin-button ">
+                    <!-- <input #inputreset type="file"  accept="image/x-png,image/gif,image/jpeg"  name="foo" (change)="processFile($event)"> -->
+                    <input style="display: none" type="file" accept="image/x-png,image/gif,image/jpeg" (change)="processFile($event)" #fileInput>
+                    <input type="button" class="upload-button" value="Upload Picture" (click)="fileInput.click()">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

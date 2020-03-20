@@ -1,0 +1,39 @@
+@import "../../../utils/styles/colors.scss";
+@import "../../../utils/styles/mixin.scss";
+.pop-up {
+    .input-wrp {
+        height: 50px;
+        input {
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: normal;
+            color: #000000;
+            &:focus {
+                box-shadow: none;
+                border-color: #ced4da;
+            }
+        }
+    }
+    .modal-header {
+        padding: 10px;
+        border-bottom: none;
+    }
+    .modal-body {
+        padding: 10px;
+    }
+    .modal-footer {
+        border: none;
+        justify-content: center;
+        padding: 50px 0px;
+        button {
+            width: 150px;
+            &:first-child {
+                @include create-buttons($primary-clr, $active-clr-primary, 40px, 16px, bold, 30px);
+                @include border(1px, $text-clr-primary);
+            }
+            &:nth-child(2) {
+                @include create-buttons($active-clr-primary, $clr-white, 40px, 1rem, 300, 30px);
+            }
+        }
+    }
+}

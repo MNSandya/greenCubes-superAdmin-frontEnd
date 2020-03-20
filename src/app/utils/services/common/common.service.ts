@@ -81,8 +81,8 @@ export class CommonService {
       })
     );
   }
-  postClient(url: string, data?: any): any {
-    return this.httpService.postClient(url, data)
+  getClient(url: string): any {
+    return this.httpService.getClient(url)
       .pipe(
         map((res: Response) => {
           return res;

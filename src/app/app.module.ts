@@ -7,10 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppCommonModule } from './common/common.module';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { CookieService } from 'ngx-cookie-service';
+import { ConfirmationDialogComponent } from './common/dialogs/confirmation-dialog/confirmation-dialog.component';
+// import { UpdateClientComponent } from './green-cube/clients/update-client/update-client.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,7 @@ import { CookieService } from 'ngx-cookie-service';
     NgxWebstorageModule.forRoot(),
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmationDialogComponent]
 })
 export class AppModule { }

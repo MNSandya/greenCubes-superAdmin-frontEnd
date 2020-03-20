@@ -1,0 +1,23 @@
+<!-- 
+<h1 mat-dialog-title>  &nbsp;&nbsp; &nbsp; Are you sure want to cancel ?    </h1>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>cancel</button>
+  <button mat-button (click)="onNoClick()">ok</button>
+  
+</div> -->
+
+
+<div class="modal-header border-style">
+    <h4 class="modal-title">Alert</h4>
+     
+    </div>
+    <div class="modal-body " >
+      <span>{{message}}</span>
+    </div>
+    <div class="modal-footer border-style">
+        <button type="button"  class="button-1" (click)="allClose('no')" mat-dialog-close>No</button>
+      <button type="button" (click)="allClose('yes')">Yes</button>
+     
+   
+    </div>

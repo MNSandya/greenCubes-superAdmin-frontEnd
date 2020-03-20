@@ -1,3 +1,20 @@
-.layout-wrapper{
-  padding: 1.5rem;
+@import "../../utils/styles/mixin.scss";
+@import "../../utils/styles/colors.scss";
+.wrp {
+  .header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    @include box-shadows(0, 3px, 6px, 0, rgba(0, 0, 0, 0.16));
+  }
+  .layout-wrapper {
+    margin-top: 55px;
+    padding: 0px;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+      @media screen and (max-width: 767px) {
+        padding: 0px 5px;
+      }
+  }
 }

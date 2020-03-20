@@ -1,192 +1,254 @@
 @import "../../../utils/styles/colors.scss";
 @import "../../../utils/styles/mixin.scss";
-
-.add-client-wrapper  {
-  width: 100%;
-
-  >div:first-child {
-    height: 40px;
-    margin-bottom: 20px;
-
-    .create-span {
-      cursor: pointer;
-      height: 40px;
-      font-family: Lato;
-      font-style: normal;
-      font-weight: normal;
-      font-stretch: normal;
-      line-height: 1.2;
-      letter-spacing: 1px;
-      text-align: left;
-      @include generate-text(  $header-text-primary, 30px );
-      @media screen and (max-width : 768px){
-        @include generate-text(  $header-text-primary, 16px );
-         }
-         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-          @include generate-text($header-text-primary, 18px);
+.add-client-wrapper {
+    width: 100%;
+    .top-layout {
+        .path {
+            border-bottom: solid 1px #d0d0d0;
+            padding: 10px;
+            background-color: $primary-clr;
+            @media screen and (max-width: 767px) {
+                padding: 10px;
+            }
+            @media (min-width: 768px) and (max-width: 1024px) {
+                padding: 10px;
+            }
+            span {
+                font-size: 18px;
+                color: #8e8e8e;
+                font-weight: normal;
+                letter-spacing: 1px;
+                @media screen and (max-width: 767px) {
+                    font-size: 14px;
+                }
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    font-size: 16px;
+                }
+                &.active-path {
+                    color: $primary-font-clr;
+                    font-size: 26px;
+                    @media screen and (max-width: 767px) {
+                        font-size: 16px;
+                    }
+                    @media (min-width: 768px) and (max-width: 1024px) {
+                        font-size: 18px;
+                    }
+                }
+            }
         }
-
     }
-
-    .create-span1 {
-      height: 40px;
-      font-family: Lato;
-      font-style: normal;
-      font-weight: normal;
-      font-stretch: normal;
-      line-height: 1.2;
-      letter-spacing: 1px;
-      text-align: left;
-      @include generate-text( $active-clr-primary, 30px );
-      @media screen and (max-width : 768px){
-        @include generate-text(  $active-clr-primary, 16px );
-         }
-         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-          @include generate-text($active-clr-primary, 18px);
+    >div:first-child {
+        height: 40px;
+        margin-bottom: 20px;
+        .create-span {
+            cursor: pointer;
+            height: 40px;
+            //font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-align: left;
+            @include generate-text( $header-text-primary, 30px);
+            @media screen and (max-width: 768px) {
+                @include generate-text( $header-text-primary, 16px);
+            }
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                @include generate-text($header-text-primary, 18px);
+            }
         }
-
+        .create-span1 {
+            height: 40px;
+            //font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-align: left;
+            @include generate-text( $active-clr-primary, 30px);
+            @media screen and (max-width: 768px) {
+                @include generate-text( $active-clr-primary, 16px);
+            }
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                @include generate-text($active-clr-primary, 18px);
+            }
+        }
     }
-
-  }
-
-  >div:nth-child(2) {
     >div:nth-child(2) {
-    form {
-      .error-text{
-        font-family: Lato;
+        >div:nth-child(2) {
+            form {
+                .error-text {
+                    //font-family: Lato;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.22;
+                    letter-spacing: 0.9px;
+                    text-align: left;
+                    font-size: 16px;
+                }
+                >div:nth-child(5) {
+                    width: 70%;
+                    .button-1 {
+                        background: $clr-white;
+                        border-radius: 10px;
+                        border: solid 1px $text-clr-primary;
+                        color: $clr-black;
+                        width: 100%;
+                        height: 40px;
+                        font-size: 0.7em;
+                    }
+                    button {
+                        background: $active-clr-primary;
+                        outline: 0;
+                        color: $clr-white;
+                        border: 1px solid $active-clr-primary;
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 40px;
+                        font-size: 0.7em;
+                    }
+                }
+            }
+        }
+    }
+    label {
+        height: 22px;
+        //font-family: Lato;
         font-weight: 500;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.22;
         letter-spacing: 0.9px;
         text-align: left;
-        font-size :16px;
-
-      }
-    >div:nth-child(5) {
-      width: 70%;
-     .button-1 {
-          background: $clr-white;
-          border-radius: 10px;
-          border: solid 1px $text-clr-primary;
-          color: $clr-black;
-          width: 100%;
-          height: 40px;
-          font-size: 0.7em;
-     }
-
-
-        button {
-          background: $active-clr-primary;
-          outline:0;
-          color: $clr-white;
-          border: 1px solid $active-clr-primary;
-          border-radius: 10px;
-          width: 100%;
-          height: 40px;
-          font-size: 0.7em;
-
-
-      }
-
+        @include generate-text( $active-clr-primary, 18px);
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @include generate-text($active-clr-primary, 16px);
+        }
     }
-  }
-}
-  }
-
-  label {
-
-    height: 22px;
-    font-family: Lato;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.22;
-    letter-spacing: 0.9px;
-    text-align: left;
-     @include generate-text(  $header-text-primary,18px );
-     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      @include generate-text($header-text-primary, 16px);
+    input {
+        height: 40px;
+        //font-family: Lato;
+        font-size: 18px;
+        font-weight: bold !important;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-align: left;
+        @include generate-text( $header-text-primary, 18px);
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @include generate-text($header-text-primary, 16px);
+        }
     }
-  }
-
-  input {
-    height: 40px;
-    font-family: Lato;
-    font-size: 18px;
-    font-weight: bold !important;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    text-align: left;
-    @include generate-text(  $header-text-primary,18px );
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      @include generate-text($header-text-primary, 16px);
+    .custom-dropdown {
+        padding: 0 !important;
+        height: 40px !important;
     }
-  }
-
-  .custom-dropdown{
-    padding: 0 !important;
-    height: 40px !important;
-  }
-  .form-control.is-invalid {
-    background-image: none;
-
-  }
-.mt-30 {
-    margin-top: 30px;
-}
-.w-70{
-  width: 70%;
-}
-.public-key {
-  margin-right: 20px;
-}
-.display-flex{
-  display: -webkit-box;
-}
-input[type="file"] {
-    @include generate-text(  $header-text-primary,18px );
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      @include generate-text($header-text-primary, 16px);
+    .form-control.is-invalid {
+        background-image: none;
     }
-}
-.hide_file {
-    z-index: 1000;
-    cursor: pointer;
-    right: 0;
-    top: 0;
-    font-size: 24px;
-
-}
-.custom-file-upload{
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 8px 12px;
-  cursor: pointer;
-  height: 36px;
-  @include create-buttons(#f5f6fa, #2e3a57, 38px, 16px, bold, 10px);
-  @include border(1px, #aab2bd);
-}
-input[type="file"]{
-  display: none;
-}
+    .mt-30 {
+        margin-top: 30px;
+    }
+    .w-70 {
+        width: 70%;
+    }
+    .public-key {
+        margin-right: 20px;
+    }
+    .display-flex {
+        display: -webkit-box;
+    }
+    input[type="file"] {
+        @include generate-text( $header-text-primary, 18px);
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @include generate-text($header-text-primary, 16px);
+        }
+    }
+    .hide_file {
+        z-index: 1000;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        font-size: 24px;
+    }
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 8px 12px;
+        cursor: pointer;
+        height: 36px;
+        @include create-buttons(#f5f6fa, #2e3a57, 38px, 16px, bold, 10px);
+        @include border(1px, #aab2bd);
+    }
+    input[type="file"] {
+        display: none;
+    }
 }
 
 form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  .input-wrp {
-    // width: 49% !important;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .input-wrp {
+        // width: 49% !important;
+    }
 }
+
 button {
-  width: 150px;
-  @include create-buttons($active-clr-primary, $clr-white, 40px, 16px, bold, 10px)
+    width: 150px;
+    @include create-buttons($active-clr-primary, $clr-white, 40px, 16px, bold, 10px)
 }
+
 .button-1 {
-  @include create-buttons($clr-white, $clr-black, 40px, 16px, bold, 10px);
-  @include border(1px, $text-clr-primary);
+    @include create-buttons($clr-white, $clr-black, 40px, 16px, bold, 10px);
+    @include border(1px, $text-clr-primary);
+}
+
+.form-div {
+    padding: 30px;
+    form {
+        width: 600px;
+        @media only screen and (max-device-width: 767px) {
+            width: 100%;
+        }
+        .error-text {
+            // font-family: Lato;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.22;
+            letter-spacing: 0.9px;
+            text-align: left;
+            font-size: 16px;
+        }
+        .btn-div {
+            // width: 70%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            .button-1 {
+                background: $primary-clr;
+                border-radius: 10px;
+                border: solid 1px $active-clr-primary;
+                color: $clr-black;
+                width: 150px;
+                height: 40px;
+                font-size: 0.7em;
+            }
+            button {
+                background: $active-clr-primary;
+                outline: 0;
+                color: $primary-clr;
+                border: 1px solid $active-clr-primary;
+                border-radius: 10px;
+                width: 150px;
+                height: 40px;
+                font-size: 0.7em;
+            }
+        }
+    }
 }

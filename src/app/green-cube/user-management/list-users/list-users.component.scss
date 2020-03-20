@@ -1,0 +1,313 @@
+@import "../../../utils/styles/colors.scss";
+@import "../../../utils/styles/mixin.scss";
+.user-managment-wrapper {
+    width: 100%;
+    .row {
+        padding: 20px;
+    }
+    @media screen and (max-width: 767px) {
+        padding: 10px;
+    }
+    >div:first-child {
+        height: 40px;
+        >div:first-child {
+            >div:first-child {
+                position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-flex-align: stretch;
+                align-items: stretch;
+                width: 100%;
+                height: 40px;
+                background-color: $clr-white !important;
+                .form-control {
+                    background-color: $clr-white !important;
+                }
+                .form-control-underlined {
+                    border-width: 0;
+                    border-bottom-width: 1px;
+                    padding-left: 0;
+                }
+                .form-control:focus {
+                    box-shadow: none;
+                }
+                >div:first-child {
+                    display: -ms-flexbox;
+                    display: flex;
+                    margin-left: -1px;
+                    button {
+                        background-color: $clr-white !important;
+                    }
+                }
+            }
+        }
+        >div:nth-child(3) {
+            button {
+                background: $active-clr-primary;
+                color: $clr-white;
+                @include border-single-radius(15px);
+                border: 1px solid $active-clr-primary;
+                width: 75%;
+                height: 40px;
+                font-size: 1em;
+                float: right;
+                @media screen and (max-width: 1100px) {
+                    width: 100%;
+                }
+                @media screen and (max-width: 700px) {
+                    font-size: 8px !important;
+                    width: 100%;
+                    @include border-single-radius(10px);
+                }
+            }
+        }
+    }
+    >div:nth-child(2) {
+        margin-bottom: 50px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        overflow-x: auto;
+        overflow-y: auto;
+        .custom-table td,
+        .custom-table th {
+            border: none;
+            background-color: $light-background;
+            border-collapse: collapse;
+            border-style: hidden;
+            .edit-icon {
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+    .page-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        // margin-left: 70px;
+        padding-bottom: 20px;
+        height: 45px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        // width: calc(100% - 70px);
+        background-color: $clr-white;
+        border: solid 1px #d0d0d0;
+        .block-1 {
+            width: 88.0%;
+            height: 40px;
+            @media screen and (max-width: 600px) {
+                height: 30px;
+            }
+            @media screen and (max-width: 700px) {
+                height: 30px;
+            }
+            background: $clr-white !important;
+            @include border-single-radius(15px);
+            >div:first-child {
+                .list-font {
+                    height: 40px;
+                    display: inline-flex;
+                    align-items: center;
+                    margin-left: 20px;
+                    // font-family: Lato;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.22;
+                    letter-spacing: 0.9px;
+                    text-align: left;
+                    @include generate-text( $active-clr-primary, 18px);
+                    vertical-align: middle;
+                    @media screen and (max-width: 600px) {
+                        @include generate-text( $active-clr-primary, 10px);
+                        height: 30px;
+                    }
+                }
+                .Selected-font {
+                    // font-family: Lato;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.22;
+                    letter-spacing: 0.9px;
+                    text-align: left;
+                    @include generate-text( $text-clr-primary, 18px);
+                    vertical-align: middle;
+                    @media screen and (max-width: 700px) {
+                        @include generate-text( $text-clr-primary, 10px);
+                        height: 30px;
+                    }
+                }
+            }
+        }
+        >div:nth-child(2) {
+            .button-1 {
+                background: $clr-white;
+                color: $clr-black;
+                height: 40px;
+                @include border-single-radius(15px);
+                border: solid 1px $text-clr-primary;
+                @media screen and (max-width: 700px) {
+                    @include border-single-radius(10px);
+                }
+                @media screen and (max-width: 600px) {
+                    height: 30px;
+                    @include border-single-radius(7px);
+                }
+            }
+            button {
+                background: $active-clr-primary;
+                color: $clr-white;
+                width: 95%;
+                height: 40px;
+                font-size: 0.9em;
+                float: right;
+                @include border-single-radius(15px);
+                border: solid 1px $active-clr-primary;
+                @media screen and (max-width: 700px) {
+                    @include border-single-radius(10px);
+                }
+                @media screen and (max-width: 600px) {
+                    height: 30px;
+                    @include border-single-radius(7px);
+                }
+            }
+        }
+    }
+    .fa {
+        font-size: 20px;
+        cursor: pointer;
+        @media screen and (max-width: 700px) {
+            font-size: 15px;
+        }
+    }
+}
+
+.active td {
+    background-color: $active-clr-primary !important;
+    // font-family: Lato;
+    @include generate-text( $clr-white, 16px);
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    text-align: left;
+}
+
+td.mat-cell {
+    border-bottom-style: none;
+}
+
+th.mat-header-cell {
+    border-bottom-style: none;
+}
+
+.mat-table {
+    background: transparent;
+    margin-bottom: 70px;
+}
+
+.mat-header-cell {
+    opacity: 0.5;
+    // font-family: Lato;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    text-align: left;
+    @include generate-text( $header-text-primary, 14px);
+    @media screen and (max-width: 700px) {
+        font-size: 8px !important;
+    }
+}
+
+.mat-cell {
+    // font-family: Lato;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: 0.9px;
+    text-align: left;
+    @include generate-text( $header-text-primary, 16px);
+    @media screen and (max-width: 700px) {
+        font-size: 10px !important;
+    }
+}
+
+.img-size {
+    width: 17px;
+    height: 20px;
+    @media screen and (max-width: 700px) {
+        width: 14px;
+        height: 18px;
+    }
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #dce3d4;
+}
+
+table {
+    min-width: 900px;
+    overflow-x: auto;
+}
+
+tr.mat-row {
+    @media screen and (max-width: 700px) {
+        height: 35px;
+    }
+    .fa {
+        color: #000000;
+    }
+}
+
+.inactive {
+    opacity: .30;
+    cursor: not-allowed;
+}
+
+.rounded-pill {
+    border-radius: 15px !important;
+    @media screen and (max-width: 760px) {
+        border-radius: 10px !important;
+    }
+}
+
+.change-height {
+    @media screen and (max-width: 600px) {
+        height: 30px !important;
+    }
+}
+
+.btn {
+    @media screen and (max-width: 600px) {
+        padding: 0px;
+    }
+}
+
+.form-control {
+    @media screen and (max-width: 600px) {
+        padding: 0px;
+    }
+}
+
+tr.mat-header-row {
+    @media screen and (max-width: 600px) {
+        height: 30px !important;
+    }
+}
+
+.font-small {
+    @media screen and (max-width: 600px) {
+        font-size: 0.6rem;
+    }
+}

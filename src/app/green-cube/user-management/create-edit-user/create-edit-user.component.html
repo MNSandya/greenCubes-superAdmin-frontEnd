@@ -1,0 +1,85 @@
+<div class="create-edit-wrapper ">
+
+    <!-- <div>
+        <span (click)="backToUserlist()" class="create-span">User List &nbsp; ></span>
+        <span *ngIf="routeid !=0" class="create-span1">&nbsp; &nbsp; Edit User</span>
+        <span *ngIf="routeid ==0" class="create-span1">&nbsp; &nbsp; Create User</span>
+    </div> -->
+    <div class="row content-wrp">
+        <div class="w-100">
+            <div class="loading-shade" *ngIf="isLoadingResults">
+                <mat-spinner [diameter]="60" *ngIf="isLoadingResults"></mat-spinner>
+            </div>
+        </div>
+        <!-- <div class="col-md-4 col-sm-8 col-12 "> -->
+        <div class="heading" *ngIf="routeid == 0">Create User</div>
+        <div class="heading" *ngIf="routeid != 0">Update User</div>
+
+        <div class="w-100 form-div">
+            <form name="form" class="w-100" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+                <div class="form-group required">
+                    <!-- <label for="userName">First Name</label> <span class="required">*</span> -->
+                    <input (keydown.space)="space($event)" type="text" class="form-control" minlength="3" name="userName" [(ngModel)]="model.userName" #userName="ngModel" placeholder="First Name *" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required />
+                    <div *ngIf="f.submitted && userName.invalid" class="invalid-feedback">
+                        <div class="error-text" *ngIf="userName.errors.required">Name is required</div>
+                    </div>
+                    <div class="invalid-feedback" *ngIf="f.submitted && userName.errors?.minlength">
+                        <div class="error-text" *ngIf="userName.errors.minlength"> Minimum length should be 3
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex div-wrp">
+                    <div class="form-group w-50">
+                        <!-- <label for="phone">Mobile Number</label> <span class="required">*</span> -->
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9+-]/g, '').replace(/(\..*)\./g, '$1');" minlength="10" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"
+                            required placeholder="Mobile Number *" />
+                        <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                            <div class="error-text" *ngIf="phone.errors.required">Number is required</div>
+                        </div>
+                        <div class="invalid-feedback" *ngIf="f.submitted && phone.errors?.minlength">
+                            <div class="error-text" *ngIf="phone.errors.minlength"> Mobile number must be greater then 9 digits.
+                            </div>
+                        </div>
+                        <!-- <div class="invalid-feedback" *ngIf="f.submitted && phone.errors?.maxlength">
+                            <div class="error-text" *ngIf="phone.errors.maxlength"> Mobile number must be  10 digits.
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group w-50">
+                        <!-- <label for="email">Email</label>
+                        <span class="required">*</span> -->
+                        <input type="text" [readonly]="routeid !=0" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" placeholder="Email *" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div class="error-text" *ngIf="email.errors.required">Email is required</div>
+                            <div class="error-text" *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex div-wrp">
+                    <div class="form-group w-50">
+                        <!-- <label for="phone">Role</label>
+                    <span class="required">*</span> -->
+                        <ng-select [items]="clientList" bindLabel="name" placeholder="Client *" class="cutom-create-list form-control custom-dropdown" bindValue="id" name="clientName" [(ngModel)]="model.clientName" #clientName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && role.invalid }"
+                            required>
+                        </ng-select>
+                        <div class="error-text" *ngIf="f.submitted && role.invalid" class="invalid-feedback">
+                            <div class="error-text" *ngIf="role.errors.required">Role is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group w-50">
+                        <!-- <label for="userName">Work place</label> -->
+                        <input type="text" class="form-control" placeholder="Work place" name="workPlace" [(ngModel)]="model.workPlace" />
+                    </div>
+                </div>
+
+                <div class="form-group d-flex mt-30 btn-div">
+                    <button type="button" (click)="backToUserlist()" class="button-1">Cancel</button> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button *ngIf="routeid == 0">Create user</button>
+                    <button *ngIf="routeid != 0">Update user</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

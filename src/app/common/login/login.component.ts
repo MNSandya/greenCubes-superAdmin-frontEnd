@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/utils/services/common/common.service';
 import { SharedService } from 'src/app/utils/services/shared/shared.service';
 import { SessionStorage } from 'ngx-webstorage';
 import { AuthToken, Userdata } from 'src/app/utils/models/common.model';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     public formBuilder: FormBuilder,
     public router: Router,
     public commonService: CommonService,
-    public sharedService: SharedService
+    public sharedService: SharedService,
+    public cookieService: CookieService
   ) { }
 
   ngOnInit() {
@@ -54,17 +56,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.router.navigate(['dashboard']);
-    // this.commonService.postData('login', this.login.value).subscribe(response => {
-    //   if (response.success) {
-    //     this.storeAuthToken(response.payload);
-    //     this.storeUserData (response.payload.user);
-    //     // this.sharedService.rolesRight(response.payload.user.role);
-    //     this.router.navigate(['dashboard']);
-    //   }
-    // }, (err) => {
-    //   this.sharedService.displaySnackbar('error', err.error.message);
-    // });
+    // this.router.navigate(['dashboard']);
+    this.cookieService.deleteAll();
+    this.commonService.postData('api/login', this.login.value).subscribe(response => {
+      if (response.success) {
+        this.storeAuthToken(response.payload);
+        this.storeUserData (response.payload.user);
+        // this.sharedService.rolesRight(response.payload.user.role);
+        this.router.navigate(['dashboard']);
+      }
+    }, (err) => {
+      this.sharedService.displaySnackbar('error', err.error.message);
+    });
   }
 
   /**

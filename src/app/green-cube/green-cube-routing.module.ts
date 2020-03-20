@@ -10,11 +10,12 @@ const routes: Routes = [{
     {
       path: '',
       component: DashboardComponent,
-      // canActivate: [AuthGuard]
+      canActivate: [AuthGuard]
     },
     {
       path: 'add-client',
       component: AddClientComponent,
+      canActivate: [AuthGuard]
     }
   ]
 }

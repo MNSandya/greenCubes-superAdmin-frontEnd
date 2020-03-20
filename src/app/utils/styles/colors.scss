@@ -1,5 +1,19 @@
+// $background-color: var(--theme-background-color);
+// $primary-clr: var(--theme-primary-color);
+// $primary-font-clr: var(--theme-primary-font-color);
+// $secondary-clr: var(--theme-secondary-color);
+// $secondary-font-clr: var(--theme-secondary-font-color);
+
+$background-color: #e9e8e9;
+$primary-clr: #ffffff;
+$primary-font-clr: #60a325;
+// $secondary-clr: var(--theme-secondary-color);
+// $secondary-font-clr: var(--theme-secondary-font-color);
+
 $light-background: #EBEBEB;
-$active-clr-primary: #0091d9;
+$primary-clr: $primary-clr;
+$active-clr-primary: $primary-font-clr;
+$login-clr-primary: #60a325;
 $header-text-primary: #2e3a57;
 $text-clr-primary: #aab2bd;
 $text-clr-secondary: #81889b;
