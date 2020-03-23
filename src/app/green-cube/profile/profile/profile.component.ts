@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
   }
 
 loadProfile() {
-  this.commonService.getData('api/profile/singleUser/'  + this.userdata.id)
+  this.commonService.getData('api/singleUser?userid='  + this.userdata.id)
   .subscribe(response => {
     if (response.success) {
       this.storeUserData (response.payload);
