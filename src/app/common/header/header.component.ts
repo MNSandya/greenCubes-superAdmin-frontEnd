@@ -4,6 +4,7 @@ import { Userdata } from 'src/app/utils/models/common.model';
 import { Router } from '@angular/router';
 import { SharedService } from '../../utils/services/shared/shared.service';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -70,7 +71,7 @@ export class HeaderComponent implements OnInit {
 
   Logout() {
     this.sessionStorage.clear();
-    this.cookieService.deleteAll('/');
+    this.cookieService.deleteAll('/', environment['hostUrl']);
     this.router.navigate(['/login']);
   }
   profile() {
