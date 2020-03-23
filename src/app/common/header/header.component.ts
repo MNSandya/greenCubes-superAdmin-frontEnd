@@ -70,7 +70,7 @@ export class HeaderComponent implements OnInit {
 
   Logout() {
     this.sessionStorage.clear();
-    this.cookieService.deleteAll();
+    this.cookieService.deleteAll('/');
     this.router.navigate(['/login']);
   }
   profile() {

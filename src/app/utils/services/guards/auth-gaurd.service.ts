@@ -31,11 +31,12 @@ export class AuthGaurdService implements CanActivate {
       this.cookieService.delete('clientToken', '/');
       this.cookieService.delete('clientId', '/');
       this.cookieService.delete('adminName', '/');
+      this.cookieService.deleteAll('/');
     }
     if (!this.authenticationToken) {
       this.router.navigate(['login']);
       // this.cookieService.delete('adminToken');
-      this.cookieService.deleteAll();
+      this.cookieService.deleteAll('/');
       return false;
     }
     return true;
