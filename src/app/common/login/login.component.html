@@ -1,61 +1,57 @@
 <div class="entry-container">
-  <div class="row">
-    <div class="col-md-6 col-lg-6 col-12 col-sm-12">
-      <img class="col-md-10 col-lg-10 col-sm-10 col-10" src="../../../../assets/images/green-cube-logo/Logo L.png" alt="green-cube-logo">
-    </div>
-    <div class="col-md-6 col-lg-6 col-12 col-sm-12">
-      <form class="entry-content-block col-md-8 col-sm-10 col-10 col-lg-8" autocomplete="off" [formGroup]="login" (submit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-12 col-sm-12">
+            <img class="col-md-10 col-lg-10 col-sm-10 col-10" src="../../../../assets/images/green-cube-logo/Logo L.png" alt="green-cube-logo">
+        </div>
+        <div class="col-md-6 col-lg-6 col-12 col-sm-12">
+            <form class="entry-content-block col-md-8 col-sm-10 col-10 col-lg-8" autocomplete="off" [formGroup]="login" (submit)="onSubmit()">
 
-        <div class="row block-1">
-          <div><span class='login-span-1'>Login to maestro </span></div>
-        </div>
-        <div class="row block-2 mtb-40">
-          <div class="col-md-12 col-lg-12 col-sm-12 col-12">
-            <input type="text" id="email" autocomplete="off" class="col-md-12 col-lg-12" name="email" formControlName="email"
-              placeholder="Email">
-          </div>
-          <div class="input-error-msg">
-            <div
-              *ngIf="validationControl.email.errors && (validationControl.email.touched && validationControl.email.dirty)">
-              <div [hidden]="!validationControl.email.errors?.required">Email field required
-              </div>
-              <div [hidden]="!validationControl.email.errors?.pattern">Please enter valid email</div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-12 mt-20">
-              <!-- autocomplete="new-password" -->
-            <input type="{{passwordType}}" id="password"  formControlName="password" class="col-md-12 col-lg-12"
-              name="password" placeholder="Password">
-            <i class="fa fa-eye" *ngIf="showPassword" (click)="showHidePwd('password')"></i>
-            <i class="fa fa-eye-slash" *ngIf="!showPassword" (click)="showHidePwd('text')"></i>
-          </div>
-          <div class="input-error-msg">
-            <div
-              *ngIf="validationControl.password.errors && (validationControl.password.touched && validationControl.password.dirty)">
-              <div [hidden]="!validationControl.password.errors?.required">Password field required
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row block-3 mt-40">
-          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
-            <div class="col-md-10 col-lg-10 col-sm-10 col-10">
+                <div class="row block-1">
+                    <div><span class='login-span-1'>Login to maestro </span></div>
+                </div>
+                <div class="row block-2 mtb-40">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                        <input type="text" id="email" autocomplete="off" class="col-md-12 col-lg-12" name="email" formControlName="email" placeholder="Email">
+                    </div>
+                    <div class="input-error-msg">
+                        <div *ngIf="validationControl.email.errors && (validationControl.email.touched && validationControl.email.dirty)">
+                            <div [hidden]="!validationControl.email.errors?.required">Email field required
+                            </div>
+                            <div [hidden]="!validationControl.email.errors?.pattern">Please enter valid email</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 mt-20">
+                        <!-- autocomplete="new-password" -->
+                        <input type="{{passwordType}}" id="password" formControlName="password" class="col-md-12 col-lg-12" name="password" placeholder="Password">
+                        <i class="fa fa-eye" *ngIf="showPassword" (click)="showHidePwd('password')"></i>
+                        <i class="fa fa-eye-slash" *ngIf="!showPassword" (click)="showHidePwd('text')"></i>
+                    </div>
+                    <div class="input-error-msg">
+                        <div *ngIf="validationControl.password.errors && (validationControl.password.touched && validationControl.password.dirty)">
+                            <div [hidden]="!validationControl.password.errors?.required">Password field required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row block-3 mt-40">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-6">
+                        <!-- <div class="col-md-10 col-lg-10 col-sm-10 col-10">
               <div class="forgot-pwd-link cursor-pointer" [routerLink]="['/forgot-password']">Forgot password?</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
-            <div class="col-md-12 col-lg-12 col-sm-12 col-12">
-              <button class="pull-right col-md-11 col-lg-11" type="submit" [disabled]="!login.valid">
+            </div> -->
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-6">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                            <button class="pull-right col-md-11 col-lg-11" type="submit" [disabled]="!login.valid">
                 <img src="../../../../assets/images/login-enter-logo/Enter.png" alt="login-enter">
                 LOGIN
               </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="footer-block col-sm-12 col-md-12 col-lg-12 txt-center">
+                <span class="font-weight-light">Copyright 2019</span><span class="plr-6">Maestro</span>
             </div>
-          </div>
         </div>
-      </form>
-      <div class="footer-block col-sm-12 col-md-12 col-lg-12 txt-center">
-        <span class="font-weight-light">Copyright 2019</span><span class="plr-6">Maestro</span>
-      </div>
     </div>
-  </div>
 </div>
