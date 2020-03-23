@@ -21,7 +21,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12 block pointer" *ngFor="let client of clientList">
                     <div class="warehouse" (click)="navigateToClient(client)">
                         <h2>{{client.name}}</h2>
-                        <span class="count">No.of  Facility : {{client.noOfDevices}}</span>
+                        <!-- <span class="count">No.of  Facility : {{client.noOfDevices}}</span> -->
                         <p class="createdDate">Created on {{ client.createdDate | date:'short' }}</p>
                         <p class="address">{{client.branch}}, {{client.location}}</p>
                         <!-- <span class="fa fa-pencil-square-o edit" (click)="updateClient($event, client)"></span> -->
