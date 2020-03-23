@@ -17,10 +17,10 @@
             <span class="span-1">Hello ,</span>
 
             <div class="top-menu">
-                <div class="client-icon" (click)="type('dashboard')" [ngClass]="{'hover': active == 'dashboard', 'hover-0': selection ==='dashboard'}">
+                <div class="client-icon pointer" (click)="type('dashboard')" [ngClass]="{'hover': active == 'dashboard', 'hover-0': selection ==='dashboard'}" matTooltip="Dashboard" [matTooltipPosition]="'below'" matTooltipClass="primary-tooltip">
                     <img class="img-size" [src]="clientIcon" (mouseenter)="hoverListItem('mousein','dashboard')" (mouseleave)="hoverListItem('mouseout','dashboard')">
                 </div>
-                <div class="client-icon" (click)="type('users')" [ngClass]="{'hover': active == 'users', 'hover-0': selection ==='users'}">
+                <div class="client-icon pointer" (click)="type('users')" [ngClass]="{'hover': active == 'users', 'hover-0': selection ==='users'}" matTooltip="User Management" [matTooltipPosition]="'below'" matTooltipClass="primary-tooltip">
                     <img class="img-size" [src]="userIcon" (mouseenter)="hoverListItem('mousein','users')" (mouseleave)="hoverListItem('mouseout','users')">
                 </div>
             </div>

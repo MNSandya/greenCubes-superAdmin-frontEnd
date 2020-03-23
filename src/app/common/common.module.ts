@@ -12,6 +12,8 @@ import { GreenCubeModule } from '../green-cube/green-cube.module';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerificationCodeComponent } from './verification-code/verification-code.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 // import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { VerificationCodeComponent } from './verification-code/verification-code
     MatMenuModule,
     UtilsModule,
     GreenCubeModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ],
   exports : [HeaderComponent, LayoutComponent]
 })

@@ -17,11 +17,11 @@ export class HeaderComponent implements OnInit {
   @SessionStorage('adminName') public adminName;
 
   active: any;
-  matTooltipdsiabled: boolean;
   selection = '';
   public clientIcon = '';
   public userIcon = '';
   public name = '';
+  public matTooltipdisabled: boolean;
 
   constructor(
     public sessionStorage: SessionStorageService,
@@ -85,10 +85,10 @@ export class HeaderComponent implements OnInit {
   hoverListItem(opportunity, type) {
     if (opportunity === 'mousein') {
       this.active = type;
-      this.matTooltipdsiabled = false;
+      this.matTooltipdisabled = false;
     } else if (opportunity === 'mouseout') {
       this.active = '';
-      this.matTooltipdsiabled = true;
+      this.matTooltipdisabled = true;
     }
   }
 
@@ -99,6 +99,7 @@ export class HeaderComponent implements OnInit {
     } else if (data === 'users') {
       this.router.navigate(['/user-management']);
     }
+    this.matTooltipdisabled = true;
   }
 
 }
