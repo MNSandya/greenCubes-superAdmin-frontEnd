@@ -4,6 +4,7 @@ import { SessionStorage } from 'ngx-webstorage';
 import { AuthToken } from '../../models/common.model';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -31,12 +32,12 @@ export class AuthGaurdService implements CanActivate {
       this.cookieService.delete('clientToken', '/');
       this.cookieService.delete('clientId', '/');
       this.cookieService.delete('adminName', '/');
-      this.cookieService.deleteAll('/');
+      this.cookieService.deleteAll('/', environment['hostUrl']);
     }
     if (!this.authenticationToken) {
       this.router.navigate(['login']);
       // this.cookieService.delete('adminToken');
-      this.cookieService.deleteAll('/');
+      this.cookieService.deleteAll('/', environment['hostUrl']);
       return false;
     }
     return true;

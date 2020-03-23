@@ -6,6 +6,7 @@ import { SharedService } from 'src/app/utils/services/shared/shared.service';
 import { SessionStorage } from 'ngx-webstorage';
 import { AuthToken, Userdata } from 'src/app/utils/models/common.model';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -57,7 +58,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     // this.router.navigate(['dashboard']);
-    this.cookieService.deleteAll();
+    this.cookieService.deleteAll('/', environment['hostUrl']);
     this.commonService.postData('api/login', this.login.value).subscribe(response => {
       if (response.success) {
         this.storeAuthToken(response.payload);
