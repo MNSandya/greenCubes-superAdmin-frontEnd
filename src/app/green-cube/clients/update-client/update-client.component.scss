@@ -3,6 +3,9 @@
 .pop-up {
     .input-wrp {
         height: 50px;
+        label {
+            font-weight: normal;
+        }
         input {
             background-color: transparent;
             font-size: 14px;
@@ -17,6 +20,9 @@
     .modal-header {
         padding: 10px;
         border-bottom: none;
+        h4 {
+            color: $active-clr-primary;
+        }
     }
     .modal-body {
         padding: 10px;
@@ -24,7 +30,7 @@
     .modal-footer {
         border: none;
         justify-content: center;
-        padding: 50px 0px;
+        padding: 25px 0px;
         button {
             width: 150px;
             &:first-child {
@@ -35,5 +41,8 @@
                 @include create-buttons($active-clr-primary, $clr-white, 40px, 1rem, 300, 30px);
             }
         }
+    }
+     ::ng-deep .mat-dialog-container {
+        padding: 10px !important;
     }
 }

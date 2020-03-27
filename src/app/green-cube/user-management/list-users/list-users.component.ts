@@ -58,8 +58,8 @@ export class ListUsersComponent implements OnInit, AfterViewInit {
     // this.permisson = this.rightsarray.find(x => x.modulename === 'users');
     // this.sharedService.set('currentRoute', { url: [''], path: [''], activePath: 'User Management' });
     // if (this.permisson.write === false && this.permisson.delete === false) {
-    // this.displayedColumns = ['position', 'name', 'email', 'mobilenumber', 'role', 'action'];
-    this.displayedColumns = ['name', 'email', 'mobilenumber', 'role', 'action'];
+    this.displayedColumns = ['position', 'name', 'email', 'mobilenumber', 'role', 'action'];
+    // this.displayedColumns = ['name', 'email', 'mobilenumber', 'role', 'action'];
 
     // }
     //  this.permisson.write = false ;

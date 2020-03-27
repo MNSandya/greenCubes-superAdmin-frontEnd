@@ -140,8 +140,9 @@
 }
 
 ::ng-deep .mat-dialog-container {
-    padding: 20px !important;
+    padding: 10px !important;
     background-color: #ffffff !important;
+    border-radius: 20px !important;
 }
 
 input:focus {
