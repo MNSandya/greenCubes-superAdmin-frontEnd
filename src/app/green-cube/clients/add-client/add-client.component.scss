@@ -40,6 +40,9 @@
     >div:first-child {
         height: 40px;
         margin-bottom: 20px;
+        @media screen and (max-width: 767px) {
+            margin-bottom: 0px;
+        }
         .create-span {
             cursor: pointer;
             height: 40px;
@@ -142,6 +145,9 @@
         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
             @include generate-text($header-text-primary, 16px);
         }
+        &:focus {
+            box-shadow: none;
+        }
     }
     .custom-dropdown {
         padding: 0 !important;
@@ -155,6 +161,9 @@
     }
     .w-70 {
         width: 70%;
+    }
+    .w-50 {
+        width: 50%;
     }
     .public-key {
         margin-right: 20px;
@@ -195,12 +204,16 @@ form {
     justify-content: space-between;
     .input-wrp {
         // width: 49% !important;
+        width: 290px;
     }
 }
 
 button {
     width: 150px;
-    @include create-buttons($active-clr-primary, $clr-white, 40px, 16px, bold, 10px)
+    @include create-buttons($active-clr-primary, $clr-white, 40px, 16px, bold, 10px);
+    @media only screen and (max-device-width: 768px) {
+        width: 135px;
+    }
 }
 
 .button-1 {
@@ -209,7 +222,7 @@ button {
 }
 
 .form-div {
-    padding: 30px;
+    padding: 20px;
     form {
         width: 600px;
         @media only screen and (max-device-width: 767px) {
@@ -248,6 +261,18 @@ button {
                 width: 150px;
                 height: 40px;
                 font-size: 0.7em;
+            }
+        }
+    }
+    .input-grp {
+        justify-content: space-between;
+        @media only screen and (max-device-width: 768px) {
+            display: block !important;
+        }
+        .input-wrp {
+            width: 290px;
+            @media only screen and (max-device-width: 768px) {
+                width: 270px;
             }
         }
     }

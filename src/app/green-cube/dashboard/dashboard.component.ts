@@ -120,7 +120,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   navigateToClient(client) {
-    console.log(client);
     // window.location.href = `${client.url}/dashboard`;
     this.sharedService.display(true);
     const token = { token: this.authenticationToken.accessToken };

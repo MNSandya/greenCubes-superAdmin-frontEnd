@@ -144,6 +144,9 @@ header {
         justify-content: space-between;
         width: 140px;
         align-items: center;
+        @media screen and (max-width: 767px) {
+            width: 115px;
+        }
         div {
             height: 55px;
             img {

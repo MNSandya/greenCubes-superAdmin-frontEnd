@@ -8,40 +8,43 @@
 
     <div class="row form-div">
         <form name="form" class="" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
-            <div class="form-group w-100 input-wrp">
+            <div class="form-group input-wrp">
                 <label for="clientName">Name</label> <span class="required">*</span>
                 <input (keydown.space)="space($event)" type="text" class="form-control" name="clientName" [(ngModel)]="clientModel.name" #clientName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clientName.invalid }" required />
                 <div *ngIf="f.submitted && clientName.invalid" class="invalid-feedback">
                     <div class="error-text" *ngIf="clientName.errors.required">Name is required</div>
                 </div>
-
             </div>
-            <div class="form-group w-100 input-wrp">
-                <label for="branch">Branch</label> <span class="required">*</span>
-                <input class="form-control w-100" name="branch" [(ngModel)]="clientModel.branch" #branch="ngModel" />
-                <div *ngIf="f.submitted && branch.invalid" class="invalid-feedback">
-                    <div class="error-text" *ngIf="branch.errors.required">Branch is required</div>
+            <div class="d-flex w-100 input-grp">
+                <div class="form-group input-wrp">
+                    <label for="branch">Branch</label> <span class="required">*</span>
+                    <input class="form-control w-100" name="branch" [(ngModel)]="clientModel.branch" #branch="ngModel" />
+                    <div *ngIf="f.submitted && branch.invalid" class="invalid-feedback">
+                        <div class="error-text" *ngIf="branch.errors.required">Branch is required</div>
+                    </div>
+                </div>
+                <div class="form-group input-wrp">
+                    <label for="location">Location</label> <span class="required">*</span>
+                    <input class="form-control w-100" name="location" [(ngModel)]="clientModel.location" #location="ngModel" />
+                    <div *ngIf="f.submitted && location.invalid" class="invalid-feedback">
+                        <div class="error-text" *ngIf="location.errors.required">Location is required</div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group w-100 input-wrp">
-                <label for="location">Location</label> <span class="required">*</span>
-                <input class="form-control w-100" name="location" [(ngModel)]="clientModel.location" #location="ngModel" />
-                <div *ngIf="f.submitted && location.invalid" class="invalid-feedback">
-                    <div class="error-text" *ngIf="location.errors.required">Location is required</div>
+            <div class="d-flex w-100 input-grp">
+                <div class="form-group input-wrp">
+                    <label for="frontEndurl">FrontEnd Url</label> <span class="required">*</span>
+                    <input class="form-control w-100" name="frontEndurl" [(ngModel)]="clientModel.frontendUrl" #frontEndurl="ngModel" />
+                    <div *ngIf="f.submitted && frontEndurl.invalid" class="invalid-feedback">
+                        <div class="error-text" *ngIf="frontEndurl.errors.required">frontEnd url is required</div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group w-100 input-wrp">
-                <label for="frontEndurl">FrontEnd Url</label> <span class="required">*</span>
-                <input class="form-control w-100" name="frontEndurl" [(ngModel)]="clientModel.frontendUrl" #frontEndurl="ngModel" />
-                <div *ngIf="f.submitted && frontEndurl.invalid" class="invalid-feedback">
-                    <div class="error-text" *ngIf="frontEndurl.errors.required">frontEnd url is required</div>
-                </div>
-            </div>
-            <div class="form-group w-100 input-wrp">
-                <label for="backEndurl">BackEnd Url</label> <span class="required">*</span>
-                <input class="form-control w-100" name="backEndurl" [(ngModel)]="clientModel.backendUrl" #backEndurl="ngModel" />
-                <div *ngIf="f.submitted && backEndurl.invalid" class="invalid-feedback">
-                    <div class="error-text" *ngIf="backEndurl.errors.required">BackEndurl is required</div>
+                <div class="form-group input-wrp">
+                    <label for="backEndurl">BackEnd Url</label> <span class="required">*</span>
+                    <input class="form-control w-100" name="backEndurl" [(ngModel)]="clientModel.backendUrl" #backEndurl="ngModel" />
+                    <div *ngIf="f.submitted && backEndurl.invalid" class="invalid-feedback">
+                        <div class="error-text" *ngIf="backEndurl.errors.required">BackEndurl is required</div>
+                    </div>
                 </div>
             </div>
             <div class="form-group d-flex mt-30 ">
