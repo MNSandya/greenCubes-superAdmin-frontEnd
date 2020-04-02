@@ -57,18 +57,35 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     };
     this.sharedService.messageSource.next('dashboard');
     this.getClientList();
+    this.getFacilityDetails();
   }
 
   ngAfterViewInit() {
-    // this.agmMap.mapReady.subscribe(map => {
-    //   const bounds = new google.maps.LatLngBounds();
-    //   for (const mm of this.markers) {
-    //     bounds.extend(new google.maps.LatLng(mm.lat, mm.lng));
-    //   }
-    //   map.fitBounds(bounds);
-    // });
+    this.agmMap.mapReady.subscribe(map => {
+      const bounds = new google.maps.LatLngBounds();
+      for (const mm of this.markers) {
+        bounds.extend(new google.maps.LatLng(mm.lat, mm.lng));
+  }
+      map.fitBounds(bounds);
+    });
   }
 
+  // get aall facilities
+  getFacilityDetails() {
+    this.commonService.getData(`api/facility`).subscribe(res => {
+      if (res.success) {
+        this.markers = [];
+        res.payload.forEach(ele => {
+          ele.facility.forEach(el => {
+            this.markers.push(new MapMarker(el));
+          });
+        });
+        this.sharedService.display(false);
+      }
+    }, (err) => {
+      this.sharedService.display(false);
+    });
+  }
 
   getClientList() {
     // const url = 'api/clients/?' + '&limit=' + this.limit + '&page=' + this.page + '&level=low' ;
@@ -195,5 +212,15 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
       }
     });
+  }
+
+  // show info window
+  showInfo(m) {
+    m.info = true;
+  }
+
+  // hide info window
+  hideInfo(m) {
+    m.info = false;
   }
 }

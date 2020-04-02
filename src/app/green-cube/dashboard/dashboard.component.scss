@@ -24,6 +24,10 @@
             overflow: auto;
             margin-bottom: 40px;
             padding: 0px 10px 0px 0px;
+            @media (max-width: 768px) {
+                max-height: 250px;
+                height: auto;
+            }
             .block {
                 float: left;
                 padding: 10px;
@@ -117,9 +121,9 @@
         }
     }
     .map-view {
-        height: calc(100vh - 124px);
+        height: calc(100vh - 106px);
         @media screen and (min-width: 768px) and (max-width: 1024px) {
-            height: calc(100vh - 100px);
+            height: calc(100vh - 97px);
             flex: 0 0 50%;
             max-width: 50%;
         }

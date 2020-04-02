@@ -33,13 +33,12 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-12 map-view">
             <agm-map #AgmMap [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true" [fitBounds]="true">
-                <!-- <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng"
-                  [label]="m.label" [markerDraggable]="m.draggable" [iconUrl]="markericon" [agmFitBounds]="true">
-                  <agm-info-window>
-                      <h2 class="map-name">{{m.name}}</h2>
-                      <span class="map-address">{{m.address}}</span>
-                  </agm-info-window>
-              </agm-marker> -->
+                <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" [iconUrl]="markericon" [agmFitBounds]="true" (mouseOver)="showInfo(m)" (mouseOut)="hideInfo(m)">
+                    <agm-info-window [isOpen]="m.info ">
+                        <h2 class="map-name">{{m.name}}</h2>
+                        <!-- <span class="map-address">{{m.address}}</span> -->
+                    </agm-info-window>
+                </agm-marker>
             </agm-map>
         </div>
     </div>
