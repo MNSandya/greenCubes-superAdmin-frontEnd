@@ -28,15 +28,16 @@ export class AuthGaurdService implements CanActivate {
         token: adminToken,
         tokenType: 'JWT',
       });
-      this.cookieService.delete('adminToken', '/');
-      this.cookieService.delete('clientToken', '/');
-      this.cookieService.delete('clientId', '/');
-      this.cookieService.delete('adminName', '/');
+      this.cookieService.set('clientId', '', 1, '/', environment['hostUrl'], false, 'Lax');
+      this.cookieService.set('adminName', '', 1, '/', environment['hostUrl'], false, 'Lax');
+      this.cookieService.set('clientToken', '', 1, '/', environment['hostUrl'], false, 'Lax');
+      this.cookieService.set('adminToken', '', 1, '/', environment['hostUrl'], false, 'Lax');
       this.cookieService.deleteAll('/', environment['hostUrl']);
     }
     if (!this.authenticationToken) {
       this.router.navigate(['login']);
       // this.cookieService.delete('adminToken');
+      this.cookieService.set('adminToken', '', 1, '/', environment['hostUrl'], false, 'Lax');
       this.cookieService.deleteAll('/', environment['hostUrl']);
       return false;
     }
