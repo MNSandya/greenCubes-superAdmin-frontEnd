@@ -143,10 +143,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.commonService.getClient(`${client.backendUrl}/api/login/forword`).subscribe(response => {
       if (response.success) {
         this.sharedService.display(false);
-        this.cookieService.set('clientId', response.payload.user.role, 1, '/', environment['hostUrl']);
-        this.cookieService.set('adminName', this.userdata.userName, 1, '/', environment['hostUrl']);
-        this.cookieService.set('clientToken', response.payload.token, 1, '/', environment['hostUrl']);
-        this.cookieService.set('adminToken', this.authenticationToken.accessToken, 1, '/', environment['hostUrl']);
+        this.cookieService.set('clientId', response.payload.user.role, 1, '/', environment['hostUrl'], false);
+        this.cookieService.set('clientId', response.payload.user.role, 1, '/', environment['hostUrl'], false);
+        this.cookieService.set('adminName', this.userdata.userName, 1, '/', environment['hostUrl'], false);
+        this.cookieService.set('clientToken', response.payload.token, 1, '/', environment['hostUrl'], false);
+        this.cookieService.set('adminToken', this.authenticationToken.accessToken, 1, '/', environment['hostUrl'], false);
         // window.location.href = `http://localhost:4200/dashboard/`;
         window.location.href = `${client.frontendUrl}/dashboard`;
       }
