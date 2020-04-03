@@ -20,7 +20,7 @@ export class AuthGaurdService implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const cookieExists: boolean = this.cookieService.check('adminToken');
-    if (cookieExists) {
+    if (cookieExists && this.cookieService.get('adminToken') !== '') {
       const adminToken = this.cookieService.get('adminToken');
       this.adminName = this.cookieService.get('adminName');
 
