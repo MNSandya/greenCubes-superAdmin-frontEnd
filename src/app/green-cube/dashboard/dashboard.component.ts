@@ -70,7 +70,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     });
   }
 
-  // get aall facilities
+  // get all facilities
   getFacilityDetails() {
     this.commonService.getData(`api/facility`).subscribe(res => {
       if (res.success) {
@@ -136,6 +136,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // redirecting to the selected client
   navigateToClient(client) {
     // window.location.href = `${client.url}/dashboard`;
     this.sharedService.display(true);
